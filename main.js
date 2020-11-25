@@ -7,6 +7,7 @@ const editorPage = document.querySelector('#editor')
 startBtn.addEventListener('click', hideTitlePage)
 homeLink.addEventListener('click', showTitlePage)
 
+// Hej
 function hideTitlePage() {
   titlePage.classList.add('hide-me')
 }
