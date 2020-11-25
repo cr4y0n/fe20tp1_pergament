@@ -16,7 +16,7 @@ function showTitlePage() {
 }
 
 
-var quill = new Quill('#editor', {
+let quill = new Quill('#editor', {
   modules: {
     toolbar: [
       [{ header: [1, 2, 3, 4, 5, 6,  false] }],
@@ -31,3 +31,15 @@ var quill = new Quill('#editor', {
   placeholder: 'Write your note here...',
   theme: 'snow'  // or 'bubble'
 });
+
+let noteObject = {}
+
+/*
+steg 1. ta tillbaks quill. 
+steg 2. hitta på ett note-objekt. 
+steg 3. hur ladda data från quill till note-objektet? 
+steg 4. hur ladda data från noteobjektet till quill. (tips: getContents och setContents).
+steg 5. gör en array av noteobjekt. 
+steg 6. spara hela arrayen i LS, 
+steg 7. ladda hela arrayen från LS 
+*/
