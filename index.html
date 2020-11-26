@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <script src="main.js" defer></script>
   <script src="https://kit.fontawesome.com/ad7aadfa18.js" crossorigin="anonymous"></script>
-
-  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
-
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <title>Pergament</title>
 </head>
 <body>
@@ -31,28 +28,23 @@
     <button id="startBtn">Start Writing</button>
     <img src="https://i.postimg.cc/GmfVg1mW/download-icons8.png" id="titleImg" alt="illustration">
   </section>
-
   <section id="howItWorks">
     <h2>How it works</h2>
-    <ul id="icons">
-      <li class="iconItem"><i class="fas fa-plus" style="font-size: 500%;"></i>Create</li>
-      <li class="iconItem"><i class="far fa-save" style="font-size: 500%;"></i>Save</li>
-      <li class="iconItem"><i class="fas fa-print" style="font-size: 500%;"></i>Print</li>
-      <li class="iconItem"><i class="far fa-trash-alt" style="font-size: 500%;"></i>Delete</li>
+    <ul id="featureList">
+      <li class="featureItem"><i class="fas fa-plus featureIcon"></i>Create</li>
+      <li class="featureItem"><i class="far fa-save featureIcon"></i>Save</li>
+      <li class="featureItem"><i class="fas fa-print featureIcon"></i>Print</li>
+      <li class="featureItem"><i class="far fa-trash-alt featureIcon"></i>Delete</li>
     </ul>
-    <button id="gotchaBtn">Gotcha</button>
+       <button id="gotchaBtn">Gotcha</button>
   </section>
-
   <section id="noteEditor">
      <div id="editor"></div>
      <button id="saveBtn">Save</button>
      <button id="deleteBtn">Delete</button>
   </section>
- 
-
-  <aside></aside>
   <footer>
     <p>© 2020 Pergament. All rights reserved</p>
   </footer>
-  </body>
+</body>
 </html>
