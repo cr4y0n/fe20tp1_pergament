@@ -1,8 +1,8 @@
-
 * { 
   margin: 0;
   padding: 0;
   font-family: 'Manrope', sans-serif;
+  scroll-behavior: smooth;
 }
 a, li {
   text-decoration: none;
@@ -11,6 +11,7 @@ a, li {
 
 /*NAVBAR*/
 #navbar {
+  /*position: fixed;*/
   display: flex;
   justify-content: center;
   border-bottom: 1px solid rgb(0, 0, 0);
@@ -30,15 +31,15 @@ a, li {
 
 /*NEW NOTE BUTTON*/
 #newNote {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
 }
 #newBtn {
   font-size: 50px;
   color: white;
   background-color: #8c30f5;
-  padding: 10px;
+  padding: 20px;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -60,7 +61,7 @@ h1 {
   text-align: center;
   line-height: 98px;
   font-size: 72px;
-  margin-top: 30px;
+  margin-top: 100px;
 }
 #startBtn{
   max-width: 300px;
@@ -95,6 +96,9 @@ h2 {
   font-size: 52px;
   margin-top: 30px;
 }
+#parText {
+  font-size: 25px;
+}
 #featureList {
   display: flex;
   flex-direction: row;
@@ -127,6 +131,10 @@ h2 {
 .hide-me {
   display: none !important;
 }
+/* Container icons HOW IT WORKS */
+#container-info {
+  display: flex;
+}
 
 /*TEXT EDITOR*/
 #noteEditor {
@@ -143,13 +151,11 @@ h2 {
   height: 100%;
 }
 #saveBtn, #deleteBtn {
-  display: flex;
-  flex-direction: row;
   max-width: 300px;
   color: white;
   background-color: #8c30f5;
   padding: 20px 50px;
-  margin-top: 30px;
+  margin: 30px;
   font-size: 25px;
   border-radius: 10px;
   border: none;
@@ -157,6 +163,11 @@ h2 {
 }
 #saveBtn:hover, #deleteBtn:hover {
   background-color: #5f12b8; 
+}
+/* Contariner knappar till editor */
+#container-btn {
+  display: flex;
+  justify-content: center;
 }
 
 /*FOOTER*/

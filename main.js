@@ -1,17 +1,23 @@
 
 let startBtn = document.querySelector('#startBtn')
+let gotchaBtn = document.querySelector('#gotchaBtn')
 let homeLink = document.querySelector('#homeLink')
 const titlePage = document.querySelector('#titlePage')
 const editorPage = document.querySelector('#editor')
+const howItWorksPage = document.querySelector('#howItWorks')
 
 startBtn.addEventListener('click', hideTitlePage)
 homeLink.addEventListener('click', showTitlePage)
+gotchaBtn.addEventListener('click', hideHowItWorks)
 
-function hideTitlePage() {
-  titlePage.classList.add('hide-me')
+function hideHowItWorks() {
+  howItWorksPage.classList.add('hide-me')
 }
 function showTitlePage() {
   titlePage.classList.remove('hide-me')
+}
+function hideTitlePage() {
+  titlePage.classList.add('hide-me')
 }
 
 
