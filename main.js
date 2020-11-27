@@ -21,7 +21,7 @@ function hideTitlePage() {
 }
 
 
-var quill = new Quill('#editor', {
+let quill = new Quill('#editor', {
   modules: {
     toolbar: [
       [{ header: [1, 2, 3, 4, 5, 6,  false] }],
@@ -35,4 +35,19 @@ var quill = new Quill('#editor', {
   },
   placeholder: 'Write your note here...',
   theme: 'snow'  // or 'bubble'
+});
+
+let noteObject = {};
+
+var saveButton = document.querySelector("#saveBtn");
+saveButton.addEventListener('click', function() {
+  // lägg till content i ett delta objekt
+  window.delta = quill.getContents();
+  quill.setContents(window.delta);
+  // sätter delta objektet till det globala objektet
+  noteObject = window.delta;
+  // gör om objektet till en sträng som kan sparas i LS
+  let noteObject_string = JSON.stringify(noteObject)
+  localStorage.setItem("note", noteObject_string)
+
 });
