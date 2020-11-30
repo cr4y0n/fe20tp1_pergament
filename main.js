@@ -125,7 +125,7 @@ function saveNoteToLocalStorage(event) {
   // sätter delta quillobjektet till det globala objektet
   noteObject = window.delta;
   noteObject.noteTitle = titleInput.value
-  console.log('NoteObject with notetitle: ',noteObject)
+  console.log('NoteObject with notetitle: ', noteObject)
   // gör om objektet till en sträng som kan sparas i LS
   noteObjectAsString = JSON.stringify(noteObject)
   localStorage.setItem(noteKey, noteObjectAsString)
@@ -138,6 +138,8 @@ function deleteAllNotesInLocalStorage(){
   localStorage.clear();
   //Clears editor
   quill.setContents([]);
+  titleInput.value = '';
+  notesList.innerHTML = '';
 }
 
 
@@ -159,8 +161,5 @@ function createLiElementInUl(event){
     const newLiElement = document.createElement('li')
     newLiElement.innerText = titleInput.value
     notesListUl.appendChild(newLiElement)
-    
-
-
 }
 
