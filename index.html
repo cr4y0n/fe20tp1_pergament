@@ -13,11 +13,11 @@
 <body>
   <nav>
     <ul id="navbar">
-      <li class="navbarItem" id="homeLink"><a href="index.html">Logo</a></li>
-      <li class="navbarItem"><a href="#editor">New Note</a></li>
-      <li class="navbarItem"><a href="#">My Notes</a></li>
-      <li class="navbarItem"><a href="#">Favorites</a></li>
-      <li class="navbarItem"><a href="#">Search</a></li>
+      <li class="navbarItem" id="homeLink"><a href="index.html"><img src="./logo.png" alt="Logo"></a></li>
+      <li class="navbarItem"><a href="#noteEditor">New Note</a></li>
+      <li class="navbarItem" id="myNotes"><a href="#savedNotesList">My Notes</a></li>
+      <li class="navbarItem" id="favorites"><a href="#">Favorites</a></li>
+      <li class="navbarItem" id="search"><a href="#">Search</a></li>
     </ul>
   </nav>
   <div id="newNote"><a href="#editor"><button id="newBtn"><i class="far fa-edit"></i></button></a>
@@ -44,15 +44,23 @@
 
 
   </section>
-
+<section id="notesContainer">
+<form>
+  <input type="text" id="titleInput">
+  
+</form>
   <section id="noteEditor">
-     <div id="editor"></div>
-     <div id="container-btn">
+  
+    <div id="editor"></div>
+    <div id="container-btn">
       <button id="saveBtn">Save</button>
-     <button id="deleteBtn">Delete</button>
-     </div>
+      <button id="deleteBtn">Clear</button>
+    </div>
   </section>
-
+  <aside>
+    <ul id="savedNotesList"></ul>
+  </aside>
+</section>
   <footer>
     <p>© 2020 Pergament. All rights reserved</p>
   </footer>
