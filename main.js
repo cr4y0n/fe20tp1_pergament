@@ -37,6 +37,7 @@ let quill = new Quill('#editor', {
   theme: 'snow'  // or 'bubble'
 });
 
+<<<<<<< Updated upstream
 let noteObject = {};
 let noteObjectAsString = '';
 let saveButton = document.querySelector('#saveBtn');
@@ -84,3 +85,29 @@ saveButton.addEventListener('click', function() {
   localStorage.setItem(noteKey, noteObjectAsString)
   updateNoteIndexValueWithOne()
 });
+=======
+const inputTitle = document.querySelector("#inputTitle") //det som skrivs in i input rutan sparas i konstanten inputTitle
+const saveBtn = document.querySelector("#saveBtn") //vi tilldelar knappen en konstant för att kunna göra det nedre steget
+saveBtn.addEventListener('click', localSave) //sidan "lyssnar"/läser av när vi klickar på knappen och vi vill skicka det vi sparar till localSave
+// saveBtn.addEventListener('click', localSaveEditor)
+
+function localSave() {
+  let noteTitle = inputTitle.value; //det som skrivs in i vår "titelruta", dess värde, tilldelas variabeln noteTitle
+  localStorage.setItem('title', noteTitle) //variabeln och dens "key name" sätts in i localstorage när funktionen körs
+  var delta = quill.getContents();
+  localStorage.setItem('text',JSON.stringify(delta));
+  
+}
+
+quill.setContents(JSON.parse(localStorage.getItem('text')));
+
+// const tempQuillObject = {};
+// det som skrivs in i quill-editorn sparas i variabeln inputEditor som ska sparas i objektet tempQuillObject. 
+// sen ska tempQuillObject in i functionen för att stringify'as innan sparning
+
+function localSaveEditor() {
+  // window.delta = inputEditor??
+  
+}
+
+>>>>>>> Stashed changes
