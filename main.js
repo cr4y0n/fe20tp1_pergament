@@ -1,4 +1,4 @@
-
+//Selektorer för knappar
 const startButton = document.querySelector('#startBtn')
 const gotchaButton = document.querySelector('#gotchaBtn')
 const homeLinkButton = document.querySelector('#homeLink')
@@ -10,12 +10,12 @@ const favoritesButton = document.querySelector('#favorites')
 const searchBtn = document.querySelector('#search')
 
 
-
+//Selektorer för vyerna
 const titlePage = document.querySelector('#titlePage')
 const editorPage = document.querySelector('#notesContainer')
 const howItWorksPage = document.querySelector('#howItWorks')
 
-
+//Eventlisteners
 startButton.addEventListener('click', hideTitlePage)
 gotchaButton.addEventListener('click', hideHowItWorks)
 homeLinkButton.addEventListener('click', showTitlePage)
@@ -24,7 +24,7 @@ saveButton.addEventListener('click', saveNoteToLocalStorage)
 deleteButton.addEventListener('click', deleteAllNotesInLocalStorage)
 
 
-
+//Funktioner som ändrar vyerna
 function hideHowItWorks() {
   howItWorksPage.classList.add('hide-me')
   showEditor()
@@ -58,7 +58,7 @@ function showStartPage(){
 
 showStartPage()
 
-
+//Quill biblioteket
 let quill = new Quill('#editor', {
   modules: {
     toolbar: [
@@ -82,10 +82,12 @@ function showEditorAndCreateNewNote() {
   showEditor()
 }
 
+// Variabler som används i Funktionerna nedan
 let noteObject = {};
 let allNotesObjects = [];
 let noteObjectAsString = '';
 
+//Konstant som ändras i localstorage
 const NOTE_INDEX_VALUE = 'numberOfNotesInLocalStorage'
 
 if(localStorage.getItem(NOTE_INDEX_VALUE)) {
@@ -95,6 +97,7 @@ if(localStorage.getItem(NOTE_INDEX_VALUE)) {
   localStorage.setItem(NOTE_INDEX_VALUE, 0)
 }
 
+// Returnerar Objekt med alla Notes
 function readAllNotes(){
   const currentNoteIndexValueAsString = localStorage.getItem(NOTE_INDEX_VALUE)
   const currentNoteIndexValueAsInteger = parseInt(currentNoteIndexValueAsString)
@@ -105,16 +108,17 @@ function readAllNotes(){
     const objectInLocalStorage = JSON.parse(objectInLocalStorageAsString)
     allNotes.push(objectInLocalStorage)
   }
+  console.log('AllNotes: ', allNotes)
   return allNotes
 }
-
+// Inkrementerar Note Index i LocalStorage
 function updateNoteIndexValueWithOne(){
   const currentNoteIndexValueAsString = localStorage.getItem(NOTE_INDEX_VALUE)
   const currentNoteIndexValueAsInteger = parseInt(currentNoteIndexValueAsString)
   const nextNoteIndexValue = currentNoteIndexValueAsInteger + 1
   localStorage.setItem(NOTE_INDEX_VALUE, nextNoteIndexValue)
 }
-
+// Sparar Notes i Localstorage som sträng
 function saveNoteToLocalStorage(event) {
   console.log('saveNoteToLocalStorage', event)
   // definiera notekey 
@@ -132,7 +136,7 @@ function saveNoteToLocalStorage(event) {
   updateNoteIndexValueWithOne()
   createLiElementInUl(event)
 };
-
+// Rensar innehållet i LocalStorage, Editorn, TitelInput och Listan på notes
 function deleteAllNotesInLocalStorage(){
   //Clears LocalStorage
   localStorage.clear();
@@ -143,17 +147,17 @@ function deleteAllNotesInLocalStorage(){
 }
 
 
-
+//Selektorer
 const titleButton = document.querySelector('#titleBtn')
 const notesList = document.querySelector('#savedNotesList')
 const titleInput = document.querySelector('#titleInput')
 //titleButton.addEventListener('click', createLiElementInUl)
 
-
+// Funktion som Lägger till En Li för Titeln i Listan
 function createLiElementInUl(event){
-    //Prevent form from submitting
+    //Hindrar form att skickas
     event.preventDefault()
-    // Todo Div
+    // 
     const notesListUl = notesList
     console.log('notesListUl: ', notesListUl)
     // Create LI
