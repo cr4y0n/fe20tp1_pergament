@@ -147,6 +147,12 @@ h2 {
   display: flex;
 }
 
+.listItem {
+  font-size: 20px;
+  color: red;
+  padding: 10px;
+}
+
 /*TEXT EDITOR*/
 #notesContainer {
   display: flex;

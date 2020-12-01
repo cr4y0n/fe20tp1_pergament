@@ -152,6 +152,7 @@ const titleButton = document.querySelector('#titleBtn')
 const notesList = document.querySelector('#savedNotesList')
 const titleInput = document.querySelector('#titleInput')
 //titleButton.addEventListener('click', createLiElementInUl)
+myNotesButton.addEventListener('click', readAllNotes)
 
 // Funktion som Lägger till En Li för Titeln i Listan
 function createLiElementInUl(event){
@@ -163,6 +164,7 @@ function createLiElementInUl(event){
     // Create LI
     
     const newLiElement = document.createElement('li')
+    newLiElement.classList.add('listItem')
     newLiElement.innerText = titleInput.value
     notesListUl.appendChild(newLiElement)
 }
