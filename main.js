@@ -41,14 +41,28 @@ let quill = new Quill('#editor', {
 const inputTitle = document.querySelector("#inputTitle") //det som skrivs in i input rutan sparas i konstanten inputTitle
 const saveBtn = document.querySelector("#saveBtn") //vi tilldelar knappen en konstant för att kunna göra det nedre steget
 saveBtn.addEventListener('click', localSave) //sidan "lyssnar"/läser av när vi klickar på knappen och vi vill skicka det vi sparar till localSave
-// saveBtn.addEventListener('click', localSaveEditor)
+
+let noteKey = 0
 
 function localSave() {
+  noteKey++
+  //let key = "note-" + noteKey.toString()
   let noteTitle = inputTitle.value; //det som skrivs in i vår "titelruta", dess värde, tilldelas variabeln noteTitle
-  localStorage.setItem('title', noteTitle) //variabeln och dens "key name" sätts in i localstorage när funktionen körs
+  let key = noteKey.toString() + ". " + noteTitle //notekey (siffra) blir en sträng och sätts ihop med titelvariabeln
+  localStorage.setItem(key, noteTitle) //variabeln och dens "key name" sätts in i localstorage när funktionen körs
   var delta = quill.getContents();
-  localStorage.setItem('text',JSON.stringify(delta));
+  localStorage.setItem(key,JSON.stringify(delta));
+  createElement();
+}
+
+const notesListUl = document.querySelector("#savedNotesList");
+
+function createElement() {
+  let newLiElement = document.createElement("li")
+  newLiElement.classList.add("noteLi");
+  newLiElement.innerText = inputTitle.value
   
+  notesListUl.appendChild(newLiElement);
 }
 
 quill.setContents(JSON.parse(localStorage.getItem('text')));
