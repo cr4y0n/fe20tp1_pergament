@@ -3,12 +3,15 @@
   padding: 0;
   font-family: 'Manrope', sans-serif;
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 a, li {
   text-decoration: none;
   list-style-type: none;
 }
-
+body {
+  height: 100vh;
+}
 /*NAVBAR*/
 #navbar {
   /*position: fixed;*/
@@ -39,6 +42,7 @@ a, li {
   position: fixed;
   right: 30px;
   bottom: 30px;
+  z-index: 1;
 }
 #newBtn {
   font-size: 50px;
@@ -57,24 +61,28 @@ a, li {
 #titlePage {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
+  height: fit-content;
+
+
 }
 h1 {
-  width: 70%;
-  margin: 30px auto;
+  width: 80%;
+  max-width: 700px;
+  margin: 0.5em auto;
   text-align: center;
-  line-height: 98px;
-  font-size: 72px;
-  margin-top: 100px;
+  line-height: 1.1em;
+  font-size: 3em;
+  margin-top: 4rem;
 }
 #startBtn{
-  max-width: 300px;
+  max-width: 10em;
   color: white;
   background-color: #8c30f5;
-  padding: 20px 50px;
-  margin-top: 30px;
-  font-size: 25px;
+  padding: 15px 40px;
+  margin-top: 1em;
+  font-size: 20px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -83,49 +91,56 @@ h1 {
   background-color: #5f12b8;  
 }
 #titleImg {
-  width: 50%;
+  max-width: 30em;
+
 }
 
 /*HOW IT WORKS*/
 #howItWorks {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
 }
 h2 {
-  width: 70%;
-  margin: 30px auto;
   text-align: center;
-  line-height: 98px;
-  font-size: 52px;
-  margin-top: 30px;
+  font-size: 1.3em;
+  margin-top: 10px;
 }
 #parText {
-  font-size: 25px;
+  font-size: 1.2em;
+  width: 90%;
+  margin: 10px auto;
+  text-align: center;
+  max-width: 700px;
+
 }
 #featureList {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 40vh;
+  width: auto;
 }
 .featureItem {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 30%;
-  font-size: 20px;
+  
+  
+  margin: 2%;
+  padding: 1.5em;
+
 }
 .featureIcon {
-  font-size: 500%;
+  font-size: 5rem;
 }
 #gotchaBtn{
+  position: relative;
   max-width: 300px;
   color: white;
   background-color: #8c30f5;
-  padding: 20px 50px;
-  margin-top: 30px;
-  font-size: 25px;
+  padding: 15px 40px;
+  margin-top: 70px;
+  font-size: 20px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -136,69 +151,27 @@ h2 {
 .hide-me {
   display: none !important;
 }
-/* Container icons HOW IT WORKS */
+/* Container icons HOW IT WORKS 
 #container-info {
   display: flex;
-}
-
-/*TEXT EDITOR*/
-#noteEditor {
-  display: flex;
-  flex-direction: column;
-  /*align-items: center;*/
-  width: 50%;
-  height: 800px;
-  margin: 0 auto;
-  padding: 10%;
-}
-#editor {
-  width: 100%;
-  height: 100%;
-}
-#saveBtn, #deleteBtn {
-  max-width: 300px;
-  color: white;
-  background-color: #8c30f5;
-  padding: 20px 50px;
-  margin: 30px;
-  font-size: 25px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-}
-#saveBtn:hover, #deleteBtn:hover {
-  background-color: #5f12b8; 
-}
-/* Contariner knappar till editor */
-#container-btn {
-  display: flex;
-  justify-content: center;
-}
-
-/* Lista med Notes */
-
-#savedNotesList {
-  margin: 10px;
 
 }
+*/
 
-.noteLi{
-  padding: 10px;
-  font-size: 20px;
-}
-.noteLi p{
-  font-size: 12px;
-  color: gray;
-}
 /*FOOTER*/
 footer {
   display: flex;
   background-color: black;
-  color: white;
+  position: fixed;
+   bottom:0;
+   width:100%;
+   height:70px;
 }
 footer p {
   padding: 20px;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
+  color: white;
+  
 }

@@ -1,0 +1,136 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+#logoContainer {
+  width: 80%;
+  max-width: 200px;
+  margin: 10px auto;
+  margin-top: 30px;
+}
+
+#logoType {
+  max-width: 200px;
+}
+#titleContainer {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+form {
+  width: 300px;
+  margin-bottom: 20px;
+}
+#inputTitle {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(239, 239, 239);
+  padding: 10px;
+  width: 100%;
+  color: rgb(33, 33, 33);
+
+}
+
+
+/*TEXT EDITOR*/
+#noteEditor {
+  display: fixed;
+  flex-direction: column;
+  /*align-items: center;*/
+  width: 80%;
+  height: 55vh;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 700px;
+}
+#editor {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 10px;
+}
+#saveBtn, #deleteBtn {
+  max-width: 300px;
+  color: white;
+  background-color: #8c30f5;
+  padding: 15px 40px;
+  margin: 30px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#saveBtn:hover, #deleteBtn:hover {
+  background-color: #5f12b8; 
+}
+/* Contariner knappar till editor */
+#container-btn {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  
+}
+
+/* Lista med Notes */
+
+#savedNotesList {
+  margin: 10px;
+
+}
+
+.noteLi{
+  padding: 10px;
+  font-size: 20px;
+}
+.noteLi p{
+  font-size: 12px;
+  color: gray;
+}
+
+/*NEW NOTE BUTTON*/
+#newNote {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 1;
+}
+#newBtn {
+  font-size: 50px;
+  color: white;
+  background-color: #8c30f5;
+  padding: 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+#newBtn:hover {
+  background-color: #5f12b8;  
+}
+
+
+/*FOOTER*/
+footer {
+  display: flex;
+  background-color: black;
+  position: fixed;
+  bottom:0;
+  width:100%;
+  height:70px;
+}
+footer p {
+  padding: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: white;
+  
+}
