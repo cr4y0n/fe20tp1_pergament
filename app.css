@@ -2,13 +2,15 @@
   margin: 0;
   padding: 0;
   font-family: 'Manrope', sans-serif;
-  scroll-behavior: smooth;
 }
 body {
   height: 100vh;
   width: 100vw;
 }
 
+main {
+  padding-bottom: 100px;
+}
 #logoContainer {
   width: 80%;
   max-width: 200px;
@@ -46,7 +48,7 @@ form {
   flex-direction: column;
   /*align-items: center;*/
   width: 80%;
-  height: 55vh;
+  height: 50vh;
   margin: 0 auto;
   padding: 10px;
   max-width: 700px;
@@ -58,9 +60,9 @@ form {
   border-radius: 10px;
 }
 #saveBtn, #deleteBtn {
-  max-width: 300px;
+  max-width: 200px;
   color: white;
-  background-color: #8c30f5;
+  background-color: #9f51f8;
   padding: 15px 40px;
   margin: 30px;
   font-size: 20px;
@@ -119,12 +121,12 @@ form {
 
 /*FOOTER*/
 footer {
-  display: flex;
   background-color: black;
   position: fixed;
   bottom:0;
   width:100%;
   height:70px;
+  
 }
 footer p {
   padding: 20px;

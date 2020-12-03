@@ -45,7 +45,7 @@ body {
   z-index: 1;
 }
 #newBtn {
-  font-size: 50px;
+  font-size: 40px;
   color: white;
   background-color: #8c30f5;
   padding: 20px;
@@ -101,6 +101,7 @@ h1 {
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  scroll-behavior: auto;
 }
 h2 {
   text-align: center;
@@ -118,20 +119,19 @@ h2 {
 #featureList {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  height: 40vh;
-  width: auto;
+  justify-content: center;
+  flex-wrap: nowrap;
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 90px;
 }
 .featureItem {
-  
-  
-  margin: 2%;
-  padding: 1.5em;
-
+  margin: 1.2rem;
+  padding: 1.1rem;
 }
 .featureIcon {
-  font-size: 5rem;
+  font-size: 600%;
 }
 #gotchaBtn{
   position: relative;
@@ -139,7 +139,7 @@ h2 {
   color: white;
   background-color: #8c30f5;
   padding: 15px 40px;
-  margin-top: 70px;
+  margin-top: 50px;
   font-size: 20px;
   border-radius: 10px;
   border: none;
