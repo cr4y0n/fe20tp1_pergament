@@ -29,6 +29,11 @@ a, li {
   background-color: whitesmoke;
 }
 
+#homeLink img{
+  width: 100px;
+  padding: 0;
+}
+
 /*NEW NOTE BUTTON*/
 #newNote {
   position: fixed;
@@ -170,6 +175,21 @@ h2 {
   justify-content: center;
 }
 
+/* Lista med Notes */
+
+#savedNotesList {
+  margin: 10px;
+
+}
+
+.noteLi{
+  padding: 10px;
+  font-size: 20px;
+}
+.noteLi p{
+  font-size: 12px;
+  color: gray;
+}
 /*FOOTER*/
 footer {
   display: flex;
