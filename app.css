@@ -11,7 +11,7 @@ body {
 main {
   padding-bottom: 100px;
 }
-#logoContainer {
+/*#logoContainer {
   width: 80%;
   max-width: 200px;
   margin: 10px auto;
@@ -20,7 +20,7 @@ main {
 
 #logoType {
   max-width: 200px;
-}
+}*/
 #titleContainer {
   display: flex;
   flex-direction: row;
@@ -44,12 +44,13 @@ form {
 
 /*TEXT EDITOR*/
 #noteEditor {
-  display: fixed;
-  flex-direction: column;
+  
   /*align-items: center;*/
   width: 80%;
   height: 50vh;
-  margin: 0 auto;
+  position: fixed;
+  right: 10%;
+  top: 10%;
   padding: 10px;
   max-width: 700px;
 }
@@ -98,7 +99,7 @@ form {
   color: gray;
 }
 
-/*NEW NOTE BUTTON*/
+/*NEW NOTE BUTTON
 #newNote {
   position: fixed;
   right: 30px;
@@ -117,7 +118,49 @@ form {
 #newBtn:hover {
   background-color: #5f12b8;  
 }
+*/
 
+#note-btns {
+  list-style-type: none;
+  margin-top: 100px;
+  padding: 0;
+
+
+}
+
+
+#note-btns li {
+  font-size: 20px;
+  display: block;  
+  padding: 5%;
+
+}
+
+#nav-options {
+  background-color: whitesmoke;
+  position: fixed;
+  height: 100vh;
+  padding: 5px;
+  width: 8vw;
+  
+}
+#logoType{
+  width: 85%;
+  margin: 10px;
+}
+
+#search-container {
+  position: fixed;
+  height: 100vh;
+  left: 15%;
+  width: 15%;
+  top: 100px;
+}
+#search-field{
+  border-radius: 8px;
+  border: 1px solid lightgrey;
+  height: 30px;
+}
 
 /*FOOTER*/
 footer {
