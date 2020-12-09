@@ -180,23 +180,23 @@ function searchNotes(str, func = function (note) {
 
 //FAVORITE NOTES
 function favNotes(note) {
-  return note.favourite;
+    return note.favourite;
 }
 
 function toggleFav(id) {
-  let noteObj = notesArr.find(note => note.id == id);
-  noteObj.favourite = !noteObj.favourite;
-  saveNotes();
+    let noteObj = notesArr.find(note => note.id == id);
+    noteObj.favourite = !noteObj.favourite;
+    saveNotes();
 }
 
 //CLEAR LS
 function clearLS() {
-  localStorage.clear();
+    localStorage.clear();
 }
 
 //CLEAR EDITOR
 function clearEditor() {
-  quill.setText('');
+    quill.setText('');
 }
 
 function setActiveNoteID(id) {
