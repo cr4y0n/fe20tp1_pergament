@@ -26,28 +26,66 @@
   background:  #9f51f8;
 }
 
-/*search field*/
+/*SEARCH FIELD AND ADD NEW NOTE BUTTON CONTAINERS*/
+
+#input-container {
+  display: flex;
+}
+
+#search-container {
+  flex: 5;
+  padding: 20px;
+}
+
+#add-new-note-container {
+  flex: 1;
+  padding: 20px;
+}
+
+/*SEARCH FIELD*/
+
 #search-field {
   border: none;
   border-radius: 8px;
   padding: 10px;
-  margin: 10px;
 }
 
 #search-field-submit {
   position: relative;
   z-index: 1;
-  left: 250px;
-  top: -35px;
+  left: 160px;
+  top: -25px;
   cursor: pointer;
 }
 
+/*NEW NOTE BUTTON*/
+
+#new-note-btn {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: white;
+}
+
+.fa-edit {
+  font-size: 22px;
+  text-align: center;
+  padding: 5px;
+}
+.fa-edit:hover {
+  cursor: pointer;
+}
+
+
 /*ul*/
+
 #navbar-items { 
   text-align: center;
 }
 
-/*il*/
+/*li*/
+
 #navbar li {
   font-size: 50px;
   align-items: center;
