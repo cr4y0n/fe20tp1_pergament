@@ -19,7 +19,7 @@ const createNoteButton = document.querySelector('#newNote-btn');
 const noteList = document.querySelector('#note-list');
 const content = document.querySelector('#content');
 const editor = document.querySelector('#editor');
-const CLS = document.querySelector('.localStorage');
+const CLS = document.querySelector('#deleteBtn');
 const search = document.querySelector('#search-field');
 const favBtn = document.querySelector('#fav-notes');
 
@@ -39,19 +39,19 @@ function initialize() {
  
         evt.preventDefault();
         let searchStr = evt.target.value;
-        // console.log(searchStr);
         if (searchStr.length >= 1) {
-            // anävndare har sökt något
             let foundNotes = searchNotes(searchStr);
             renderNotesList(foundNotes);
         } else {
-            // anv har tömt sökrutan
             renderNotesList(notesArr)
         }
     })
  
+    CLS.addEventListener('click', function () {
+        clearEditor()
+    });
+
     document.querySelector('#saveBtn').addEventListener('click', function () {
-        // console.log("cNB func ran");
         createNote();
         renderNotesList(notesArr);
     })
@@ -66,14 +66,21 @@ function initialize() {
     });
 }
 
- 
+function savedDate() {
+    var time = new Date().getTime();
+    var date = new Date(time);
+    return date.toLocaleString();
+}
+
+
 function createNote() {
     let noteObj = {
         id: Date.now(),
         title: '',
         content: quill.getContents(),
         text: quill.getText(),
-        favourite: false
+        favourite: false,
+        noteDate: savedDate(),
     }
     notesArr.push(noteObj);
     saveNotes();
@@ -82,18 +89,14 @@ function createNote() {
 }
  
 function readNote(id) {
-    // hitta ett noteobjekt vars id matchar med argumentet id
     return notesArr.find(note => note.id == id);
 }
 function setEditor(note) {
-    // uppdatera innehållet i edtiron
-    // sätt activenoteID
     quill.setContents(note.content);
     setActiveNoteID(note.id);
  
 }
 function updateNote(id) {
-    // skapa INGEN ny note, istället uppdatera en befintlig note
     let noteObj = notesArr.find(note => note.id == id);
     noteObj.content = quill.getContents();
     noteObj.text = quill.getText();
@@ -112,12 +115,13 @@ function getNotes() {
 function saveNotes() {
     localStorage.setItem('notesArr', JSON.stringify(notesArr))
 }
- 
+
+
 function noteObjToHTML(noteObj) {
     let LI = document.createElement('li');
     LI.setAttribute('data-id', noteObj.id);
     LI.innerHTML = `<span>${noteObj.favourite ? '★' : '☆'
-        }</span > <p>${noteObj.text}</p>`
+        }</span> <h3>${noteObj.noteDate}</h3> <p>${noteObj.text}</p>`
     return LI
 }
  
@@ -132,7 +136,6 @@ function favNotes(note) {
   return note.favourite;
 }
 function searchNotes(str, func = function (note) { return note.text.toLowerCase().includes(str.toLowerCase()) }) {
-  // filtrera och returnera samtliga notes som innehåller str
   return notesArr.filter(func)
 }
 
