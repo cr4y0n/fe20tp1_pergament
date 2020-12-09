@@ -28,6 +28,7 @@ const editor = document.querySelector('#editor');
 const CLS = document.querySelector('#deleteBtn');
 const search = document.querySelector('#search-field');
 const favBtn = document.querySelector('#fav-notes');
+const cleanEditor = document.querySelector('#clearEditorBtn');
 
 let notesArr = [];
 let activeNoteID;
@@ -59,7 +60,7 @@ function initialize() {
         }
     })
 
-    CLS.addEventListener('click', function () {
+    cleanEditor.addEventListener('click', function () {
         clearEditor()
     });
 
@@ -83,6 +84,24 @@ function initialize() {
     quill.on('text-change', function (delta) {
         change = change.compose(delta);
     });
+
+        // Save periodically
+        setInterval(function () {
+            if (change.length() > 0) {
+                console.log('Saving changes', change);
+                // Save the entire updated text to localStorage
+                //const data = JSON.stringify(quill.getContents())
+                //localStorage.setItem('storedText', data);
+                // finns det en aktiv note? om inte, gör ingenting
+                if (activeNoteID) {
+                    updateNote(activeNoteID)
+                }
+                change = new Delta();
+            }
+        }, 2 * 1000);
+
+    getNotes();
+    renderNotesList(notesArr);
 }
 
 function savedDate() {
@@ -144,19 +163,18 @@ function saveNotes() {
 }
 
 
-function oldNoteObjToHTML(noteObj) {
-    let LI = document.createElement('li');
-    LI.setAttribute('data-id', noteObj.id);
-    LI.innerHTML = `<span>${noteObj.favourite ? '★' : '☆'
-        }</span> <h3>${noteObj.noteDate}</h3> <p>${noteObj.text}</p>`
-    return LI
-}
+// function oldNoteObjToHTML(noteObj) {
+//     let LI = document.createElement('li');
+//     LI.setAttribute('data-id', noteObj.id);
+//     LI.innerHTML = `<span>${noteObj.favourite ? '★' : '☆'
+//         }</span> <h3>${noteObj.noteDate}</h3> <p>${noteObj.text}</p>`
+//     return LI
+// }
 
 function noteObjToHTML(noteObj) {
     let LI = document.createElement('li');
     LI.setAttribute('data-id', noteObj.id);
-    LI.innerHTML = `<span>${noteObj.favourite ? '★' : '☆'
-        }</span> <h3>${newSavedDate(noteObj.id)}</h3> <p>${noteObj.text}</p>`
+    LI.innerHTML = `<h2><i class="far fa-star"></i> ${noteObj.title}</h2> <h3>${newSavedDate(noteObj.id)}</h3> <p>${noteObj.text}</p>`
     return LI
 }
 
