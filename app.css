@@ -1,0 +1,141 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+/* NAV BAR TO THE SIDE */
+
+#nav-options {
+  background-color: whitesmoke;
+  position: absolute;
+  height: 100vh;
+  padding: 25px;
+  width: 120px;  
+}
+
+#logo-type{
+  width: 85%;
+  margin: 10px;
+}
+
+#note-btns {
+  list-style-type: none;
+  margin-top: 100px;
+  height: 300px;  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+
+#note-btns li {
+  font-size: 20px;
+  display: block;  
+  padding: 10px;
+  cursor: pointer;
+  background-color: lightgray;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* SEARCH NOTES */
+
+#search-container {
+  position: fixed;
+  height: 100vh;
+  left: 20%;
+  width: 15%;
+  top: 15%;
+}
+
+#search-field{
+  border-radius: 8px;
+  border: 1px solid lightgrey;
+  height: 30px;
+}
+
+#search-field::placeholder {
+  padding-left: 10px;
+}
+
+/* TEXT EDITOR */
+
+#note-editor {
+  width: 80%;
+  height: 50vh;
+  position: fixed;
+  right: 10%;
+  top: 15%;
+  padding: 0px;
+  max-width: 700px;
+}
+
+#editor {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 10px;
+}
+
+/* LIST WITH NOTES */
+
+#note-list {
+  list-style-type: none;
+}
+
+.note-li{
+  padding-top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.note-li p{
+  font-size: 14px;
+}
+
+.note-li h3 {
+  font-size: 10px;
+  color: rgb(136, 136, 136);
+}
+
+.note-li h4 {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+/* SAVE DELETE BUTTONS */
+
+#btn-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  
+}
+
+#save-btn, #delete-btn {
+  max-width: 200px;
+  color: white;
+  background-color: #9f51f8;
+  padding: 15px 40px;
+  margin: 30px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#save-btn:hover, #delete-btn:hover {
+  background-color: #5f12b8; 
+}
+
