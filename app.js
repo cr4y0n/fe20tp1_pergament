@@ -14,7 +14,7 @@ let quill = new Quill('#editor', {
 
 let Delta = Quill.import('delta');
 
-const saveNoteButton = document.querySelector('#saveBtn');
+const saveNoteButton = document.querySelector('#save-btn');
 const createNoteButton = document.querySelector('#newNote-btn');
 const noteList = document.querySelector('#note-list');
 const content = document.querySelector('#content');
@@ -50,7 +50,7 @@ function initialize() {
         }
     })
  
-    document.querySelector('#saveBtn').addEventListener('click', function () {
+    document.querySelector('#save-btn').addEventListener('click', function () {
         // console.log("cNB func ran");
         createNote();
         renderNotesList(notesArr);
@@ -152,4 +152,8 @@ function clearEditor() {
 function setActiveNoteID(id) {
     activeNoteID = id;
 }
+
+/*SUBMIT BTN IN SEARCHBOX*/
+
+
  
