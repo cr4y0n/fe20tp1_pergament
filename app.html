@@ -12,46 +12,40 @@
   <title>Quire</title>
 </head>
 <body>
-  <main>
-    <!-- <div id="logoContainer">
-    <img id="logoType" src="./logo.png" alt="Logotype">
-    </div> -->
-    <section id="nav-options">
-      <img id="logoType" src="./logo.png" alt="Logotype">
-      <ul id="note-btns">
-        <li id="navbarItem">All notes</li>
-        <li id="fav-notes">Favorites</li>
-        <li id="deleted">Deleted</li>
-      </ul>
-    </section>
-    <section id="search-container">
-      <input type="text" id="search-field">
-      <button id="newNote-btn">+</button>
-      <section id="note-list">
+  <div class="note-app"> 
+     <nav class="note-app-part" id="navbar">
+       <ul id="navbar-items">
+        <li title="Home" id="home"><a href="./index.html"><i class="fab fa-quora"></i></a></li>
+        <li title="My Notes" id="saved-notes-item"><i class="far fa-sticky-note"></i></li>
+        <li title="Favorites" id="favorite-notes-item"><i class="fas fa-star"></i></li>
+        <li title="Deleted" id="deleted-notes-item"><i class="fas fa-trash-alt"></i></li> <!-- <i class="fas fa-trash-restore-alt"></i> -->
+       </ul>
+     </nav>
+     <section class="note-app-part" id="notebar">
+       <div id="input-container">
+         <div id="search-container">
+           <input type="text" id="search-field" placeholder="Search..." size="20";>
+           <i id="search-field-submit" class="fas fa-search"></i>
+         </div>
+         <div id="add-new-note-container">
+           <button id="new-note-btn"><i class="fas fa-edit"></i></button>
+         </div>
+       </div>
 
-      </section>
-    </section>
-<!-- <i class="fas fa-star"></i> -->
-
-<i class="far fa-star"></i>
-
-    <section id="noteEditor"> 
-      <div id="titleContainer">
-        <form> 
-        </form>
-      </div>   
-      <div id="editor"></div>
-      <div id="container-btn">
-        <button id="saveBtn">Save</button>
-        <button id="clearEditorBtn">Clear editor</button>
+          <div id="clear-container">
+           <button id="clearAllNotes">Clear all notes</button>
+         </div>
+         
+       <ul id="notes-list">
+       </ul>
+     </section>
+     <main class="note-app-part" id="note-editor">
+       <div id="editor"></div>
+       <div id="container-btn">
+        <button id="save-btn">Save</button>
+        <button id="delete-btn">Delete</button>
       </div>
-      <ul id="savedNotesList"></ul>
-    </section>
-  
-  </main>
-   <!-- <div id="newNote"><button id="newBtn"><i class="far fa-edit"></i></button></div> -->
-      <!-- <footer>
-        <p>© 2020 Pergament. All rights reserved</p>
-      </footer> -->
+     </main>
+  </div>
 </body>
 </html>
