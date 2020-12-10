@@ -8,12 +8,18 @@ const editor = document.querySelector('#editor');
 const CLS = document.querySelector('#delete-btn');
 const search = document.querySelector('#search-field');
 const favBtn = document.querySelector('#favorite-notes-item');
+<<<<<<< HEAD
 const clearAllNotes = document.querySelector('#clearAllNotes');
 const removedBtn = document.querySelector('.fa-times');
 
 
 /*VARIABLES*/
 
+=======
+
+/*VARIABLES*/
+
+>>>>>>> 8dd80bc2504f6e37e1571553005965a26dbb8555
 let Delta = Quill.import('delta');
 let notesArr = [];
 let activeNoteID;
@@ -45,16 +51,22 @@ let quill = new Quill('#editor', {
 
 document.addEventListener('DOMContentLoaded', initialize);
 
+<<<<<<< HEAD
 
 
 
 /*FUNCTIONS*/
 
+=======
+/*FUNCTIONS*/
+
+>>>>>>> 8dd80bc2504f6e37e1571553005965a26dbb8555
 //INITIALIZE
 function initialize() {
   document.querySelector('#favorite-notes-item').addEventListener('click', function(evt) {
     renderNotesList(searchNotes('', favNotes));
   });
+<<<<<<< HEAD
 
 
 
@@ -171,6 +183,78 @@ function newSavedDate(id) {
   return date.toLocaleString();
 }
 
+=======
+  search.addEventListener('input', function(evt) {
+    evt.preventDefault();
+    let searchStr = evt.target.value;
+    if (searchStr.length >= 1) {
+      let foundNotes = searchNotes(searchStr);
+      renderNotesList(foundNotes);
+    } else {
+      renderNotesList(notesArr)
+    }
+  })
+  CLS.addEventListener('click', function() {
+      clearEditor()
+  });
+  document.querySelector('#save-btn').addEventListener('click', function() {
+    createNote();
+    renderNotesList(notesArr);
+  })
+  noteList.addEventListener('click', function(evt) {
+    let clickedLI = evt.target.closest('li');
+    let clickedID = clickedLI.getAttribute('data-id');
+    // som det är nu, resulterar alla klick på en note
+    // i en "load", dvs editorn sätts till det innehåller
+    // TODO: kolla om anv klickade på stjärnan
+    // hitta rätt note mha id let clickedNote = notesArr.find...
+    // clickedNote.favourite = !clickedNote.favourite
+    // savenotes
+    // if (evt.classList.contains('fa-star'))
+    setEditor(readNote(clickedID));
+  })
+  let change = new Delta();
+  quill.on('text-change', function(delta) {
+    change = change.compose(delta);
+  });
+}
+
+//CREATE NOTE
+function createNote() {
+  let noteObj = {
+      id: Date.now(),
+      title: findTitle(),
+      content: quill.getContents(),
+      text: quill.getText(),
+      favourite: false,
+  }
+  notesArr.push(noteObj);
+  saveNotes();
+  setActiveNoteID(noteObj.id);
+  renderNotesList(notesArr);
+}
+
+//TITLE
+function findTitle() {
+  let editorContents = document.querySelector('.ql-editor');
+  let endOfFirstLine = editorContents.innerText.indexOf('\n');
+  let firstLine = quill.getText(0, endOfFirstLine);
+  return firstLine
+}
+
+//DATE
+function savedDate() {
+  var time = new Date().getTime();
+  var date = new Date(time);
+  return date.toLocaleString();
+}
+
+function newSavedDate(id) {
+  var date = new Date(id);
+  return date.toLocaleString();
+}
+
+>>>>>>> 8dd80bc2504f6e37e1571553005965a26dbb8555
 //READ NOTE
 function readNote(id) {
   return notesArr.find(note => note.id == id);
@@ -201,6 +285,7 @@ function saveNotes() {
   localStorage.setItem('notesArr', JSON.stringify(notesArr))
 }
 
+<<<<<<< HEAD
 
 // function oldNoteObjToHTML(noteObj) {
 //   let LI = document.createElement('li');
@@ -209,11 +294,24 @@ function saveNotes() {
 //       }</span> <h3>${noteObj.noteDate}</h3> <p>${noteObj.text}</p>`
 //   return LI
 // }
+=======
+function oldNoteObjToHTML(noteObj) {
+  let LI = document.createElement('li');
+  LI.setAttribute('data-id', noteObj.id);
+  LI.innerHTML = `<span>${noteObj.favourite ? '★' : '☆'
+      }</span> <h3>${noteObj.noteDate}</h3> <p>${noteObj.text}</p>`
+  return LI
+}
+>>>>>>> 8dd80bc2504f6e37e1571553005965a26dbb8555
 
 function noteObjToHTML(noteObj) {
   let LI = document.createElement('li');
   LI.setAttribute('data-id', noteObj.id);
+<<<<<<< HEAD
   LI.innerHTML = `<i class="far fa-star unfilled"></i><i class="fas fa-trash removed"></i> <h2>${noteObj.title}</h2> <h3>${newSavedDate(noteObj.id)}</h3> <p>${noteObj.text}</p>`
+=======
+  LI.innerHTML = `<span>${noteObj.favourite ? '★' : '☆'}</span> <h3>${newSavedDate(noteObj.id)}</h3> <p>${noteObj.text}</p>`
+>>>>>>> 8dd80bc2504f6e37e1571553005965a26dbb8555
   return LI
 }
 
@@ -233,7 +331,11 @@ function searchNotes(str, func = function (note) {
 
 //FAVORITE NOTES
 function favNotes(note) {
+<<<<<<< HEAD
   return note.favourite;
+=======
+    return note.favourite;
+>>>>>>> 8dd80bc2504f6e37e1571553005965a26dbb8555
 }
 
 function toggleFav(id) {
@@ -242,11 +344,14 @@ function toggleFav(id) {
   saveNotes();
 }
 
+<<<<<<< HEAD
 function removedNotes() {
 
 }
 
 
+=======
+>>>>>>> 8dd80bc2504f6e37e1571553005965a26dbb8555
 //CLEAR LS
 function clearLS() {
   localStorage.clear();
