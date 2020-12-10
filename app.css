@@ -1,10 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-<<<<<<< HEAD
   font-family: 'Manrope', sans-serif;
-=======
->>>>>>> 8dd80bc2504f6e37e1571553005965a26dbb8555
 }
 
 .note-app {
@@ -59,7 +56,6 @@
   z-index: 1;
   left: 160px;
   top: -25px;
-<<<<<<< HEAD
   cursor: pointer;
 }
 
@@ -107,33 +103,10 @@
   font-weight: 800;
   border: 1px solid rgb(102, 102, 102);
   border-radius: 5px;
-=======
-  cursor: pointer;
-}
-
-/*NEW NOTE BUTTON*/
-
-#new-note-btn {
-  margin: 0;
-  padding: 0;
-  border: none;
-  border-radius: 8px;
-  background: white;
-}
-
-.fa-edit {
-  font-size: 22px;
-  text-align: center;
-  padding: 5px;
-}
-.fa-edit:hover {
-  cursor: pointer;
->>>>>>> 8dd80bc2504f6e37e1571553005965a26dbb8555
 }
 
 /*ul*/
 
-<<<<<<< HEAD
 #navbar-items { 
   text-align: center;
 }
@@ -185,38 +158,3 @@
 #notes-list p {
   font-size: 15px;
 }
-=======
-/*ul*/
-
-#navbar-items { 
-  text-align: center;
-}
-
-/*li*/
-
-#navbar li {
-  font-size: 50px;
-  align-items: center;
-  padding: 40px;
-}
-
-/*NOTEBAR (GREY)*/
-
-#notebar {
-  flex: 1.2;
-  background: rgb(231, 231, 231);
-}
-
-#notebar li {
-  font-size: 20px;
-  align-items: center;
-  padding: 20px;
-}
-
-/*NOTE EDITOR*/
-
-#note-editor {
-  flex: 6;
-}
-
->>>>>>> 8dd80bc2504f6e37e1571553005965a26dbb8555
