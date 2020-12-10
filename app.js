@@ -9,6 +9,8 @@ const CLS = document.querySelector('#delete-btn');
 const search = document.querySelector('#search-field');
 const favBtn = document.querySelector('#favorite-notes-item');
 const clearAllNotes = document.querySelector('#clearAllNotes');
+const removedBtn = document.querySelector('.fa-times');
+
 
 /*VARIABLES*/
 
@@ -44,6 +46,8 @@ let quill = new Quill('#editor', {
 document.addEventListener('DOMContentLoaded', initialize);
 
 
+
+
 /*FUNCTIONS*/
 
 //INITIALIZE
@@ -68,9 +72,9 @@ function initialize() {
       clearEditor()
   });
 
-  clearAllNotes.addEventListener('click', function() {
-      clearLS()
-  });
+  // clearAllNotes.addEventListener('click', function() {
+  //     clearLS()
+  // });
 
   document.querySelector('#save-btn').addEventListener('click', function() {
     createNote();
@@ -88,6 +92,13 @@ function initialize() {
     // if (evt.classList.contains('fa-star'))
     setEditor(readNote(clickedID));
   })
+
+  // removedBtn.addEventListener('click', function(evt) {
+  //   let clickedBtn = evt.target.closest('.fa-times');
+  //   console.log(clickedBtn)
+
+  // })
+
   let change = new Delta();
   quill.on('text-change', function(delta) {
     change = change.compose(delta);
@@ -122,6 +133,7 @@ function createNote() {
       content: quill.getContents(),
       text: findText(),
       favourite: false,
+      removed: false,
   }
   notesArr.push(noteObj);
   saveNotes();
@@ -147,13 +159,13 @@ function findText() {
 }
 
 
-//DATE
-function savedDate() {
-  var time = new Date().getTime();
-  var date = new Date(time);
-  return date.toLocaleString();
-}
+// function savedDate() {
+//   var time = new Date().getTime();
+//   var date = new Date(time);
+//   return date.toLocaleString();
+// }
 
+//DATE
 function newSavedDate(id) {
   var date = new Date(id);
   return date.toLocaleString();
@@ -189,18 +201,19 @@ function saveNotes() {
   localStorage.setItem('notesArr', JSON.stringify(notesArr))
 }
 
-function oldNoteObjToHTML(noteObj) {
-  let LI = document.createElement('li');
-  LI.setAttribute('data-id', noteObj.id);
-  LI.innerHTML = `<span>${noteObj.favourite ? '★' : '☆'
-      }</span> <h3>${noteObj.noteDate}</h3> <p>${noteObj.text}</p>`
-  return LI
-}
+
+// function oldNoteObjToHTML(noteObj) {
+//   let LI = document.createElement('li');
+//   LI.setAttribute('data-id', noteObj.id);
+//   LI.innerHTML = `<span>${noteObj.favourite ? '★' : '☆'
+//       }</span> <h3>${noteObj.noteDate}</h3> <p>${noteObj.text}</p>`
+//   return LI
+// }
 
 function noteObjToHTML(noteObj) {
   let LI = document.createElement('li');
   LI.setAttribute('data-id', noteObj.id);
-  LI.innerHTML = `<h2><i class="far fa-star"></i> ${noteObj.title}</h2> <h3>${newSavedDate(noteObj.id)}</h3> <p>${noteObj.text}</p>`
+  LI.innerHTML = `<i class="far fa-star unfilled"></i><i class="fas fa-trash removed"></i> <h2>${noteObj.title}</h2> <h3>${newSavedDate(noteObj.id)}</h3> <p>${noteObj.text}</p>`
   return LI
 }
 
@@ -228,6 +241,11 @@ function toggleFav(id) {
   noteObj.favourite = !noteObj.favourite;
   saveNotes();
 }
+
+function removedNotes() {
+
+}
+
 
 //CLEAR LS
 function clearLS() {

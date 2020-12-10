@@ -78,6 +78,24 @@
   cursor: pointer;
 }
 
+/*FAVOURITE NOTE BUTTON*/
+
+.unfilled {
+  /* float: right; */
+  position: relative;
+  left: 210px;
+  top: -5px;
+}
+
+/*REMOVED NOTE BUTTON*/
+
+.removed {
+  position: relative;
+  left: 225px;
+  top: -3px;
+  font-size: 23px;
+}
+
 /* CLEAR ALL NOTES BUTTON */
 
 #clearAllNotes {
@@ -134,6 +152,7 @@
   font-size: 12px;
   color: rgb(82, 82, 82);
   font-weight: 100;
+  margin-top: 5px;
 }
 
 #notes-list p {
