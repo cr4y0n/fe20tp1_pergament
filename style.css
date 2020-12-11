@@ -5,21 +5,25 @@
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
+
 a, li {
   text-decoration: none;
   list-style-type: none;
 }
+
 body {
   height: 100vh;
 }
+
 /*NAVBAR*/
+
 #navbar {
-  /*position: fixed;*/
   display: flex;
   justify-content: center;
   border-bottom: 1px solid rgb(0, 0, 0);
   flex-wrap: wrap;
 }
+
 .navbarItem a {
   display: flex;
   flex-direction: row;
@@ -28,6 +32,7 @@ body {
   font-size: 20px;
   color: rgb(0, 0, 0);
 }
+
 .navbarItem a:hover {
   background-color: whitesmoke;
 }
@@ -37,36 +42,16 @@ body {
   padding: 0;
 }
 
-/*NEW NOTE BUTTON*/
-#newNote {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  z-index: 1;
-}
-#newBtn {
-  font-size: 40px;
-  color: white;
-  background-color: #8c30f5;
-  padding: 20px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-}
-#newBtn:hover {
-  background-color: #5f12b8;  
-}
+/*LANDING PAGE*/
 
-/*TITLE PAGE*/
 #titlePage {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   height: fit-content;
-
-
 }
+
 h1 {
   width: 80%;
   max-width: 700px;
@@ -76,6 +61,7 @@ h1 {
   font-size: 3em;
   margin-top: 4rem;
 }
+
 #startBtn{
   max-width: 10em;
   color: white;
@@ -87,15 +73,17 @@ h1 {
   border: none;
   cursor: pointer;
 }
+
 #startBtn:hover {
   background-color: #5f12b8;  
 }
+
 #titleImg {
   max-width: 30em;
-
 }
 
 /*HOW IT WORKS*/
+
 #howItWorks {
   display: flex;
   align-items: center;
@@ -103,19 +91,20 @@ h1 {
   flex-direction: column;
   scroll-behavior: auto;
 }
+
 h2 {
   text-align: center;
   font-size: 1.3em;
   margin-top: 10px;
 }
+
 #parText {
-  font-size: 1.2em;
-  width: 90%;
+  font-size: 1.5em;
+  width: 80%;
   margin: 10px auto;
   text-align: center;
-  max-width: 700px;
-
 }
+
 #featureList {
   display: flex;
   flex-direction: row;
@@ -126,13 +115,16 @@ h2 {
   margin: 0 auto;
   margin-bottom: 90px;
 }
+
 .featureItem {
   margin: 1.2rem;
   padding: 1.1rem;
 }
+
 .featureIcon {
   font-size: 600%;
 }
+
 #gotchaBtn{
   position: relative;
   max-width: 300px;
@@ -145,33 +137,28 @@ h2 {
   border: none;
   cursor: pointer;
 }
+
 #gotchaBtn:hover {
   background-color: #5f12b8;  
 }
+
 .hide-me {
   display: none !important;
 }
-/* Container icons HOW IT WORKS 
-#container-info {
-  display: flex;
-
-}
-*/
 
 /*FOOTER*/
+
 footer {
   display: flex;
   background-color: black;
-  position: fixed;
-   bottom:0;
-   width:100%;
-   height:70px;
+  width: 100%;
+  height: 50px;
 }
+
 footer p {
-  padding: 20px;
+  padding: 10px;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   color: white;
-  
 }

@@ -23,8 +23,26 @@
 /*NAVBAR (PURPLE)*/
 
 #navbar {
-  flex: 0.2;
+  flex: 0.1;
   background:  #9f51f8;
+}
+
+#navbar-items li i{
+  font-size: 30px;
+  padding: 0;
+}
+
+#navbar li a {
+  color: black;
+}
+
+#navbar li a:hover {
+  opacity: 0.5;
+}
+
+#home .fa-quora{
+  font-size: 50px;
+  text-shadow: 3px 2px 3px rgba(255, 255, 255, 0.548);
 }
 
 /*SEARCH FIELD AND ADD NEW NOTE BUTTON CONTAINERS*/
@@ -81,7 +99,6 @@
 /*FAVOURITE NOTE BUTTON*/
 
 .unfilled {
-  /* float: right; */
   position: relative;
   left: 210px;
   top: -5px;
@@ -96,7 +113,7 @@
   font-size: 23px;
 }
 
-/* CLEAR ALL NOTES BUTTON */
+/* CLEAR ALL NOTES BTN */
 
 #clearAllNotes {
   padding: 8px;
@@ -122,8 +139,9 @@
 /*NOTEBAR (GREY)*/
 
 #notebar {
-  flex: 1.2;
+  flex: 2.5;
   background: rgb(231, 231, 231);
+  box-shadow: inset 3px 0px 6px rgb(141, 141, 141);
 }
 
 #notebar li {
@@ -135,13 +153,56 @@
 /*NOTE EDITOR*/
 
 #note-editor {
-  flex: 6;
+  flex: 8;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+.ql-editor {
+  font-size: 15px;
+  padding: 30px;
+}
+
+/* EDITOR BUTTONS - SAVE & CLEAR */
+
+#container-btn {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}
+
+#clear-btn, #save-btn:hover {
+  cursor: pointer;
+}
+
+/* SAVE BUTTON */
+
+#save-btn {
+  border: hidden;
+  background: none;
+}
+
+.fa-floppy-o {
+  font-size: 40px;
+  padding-right: 10px;
+}
+
+/* CLEAR EDITOR BUTTON */
+
+#clear-btn {
+  border: hidden;
+  background: none;
+}
+
+.fa-eraser {
+  font-size: 40px;
 }
 
 /* NOTE-LIST */
 
 #notes-list li {
   border-bottom: 2px solid lightgray;
+  margin: 3px;
 }
 
 #notes-list h2{
