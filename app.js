@@ -1,8 +1,9 @@
 /*CONSTANTS*/
 
-const saveNoteButton = document.querySelector('#save-btn');
+//const saveNoteButton = document.querySelector('#save-btn');
 const createNoteButton = document.querySelector('#new-note-btn');
 const noteList = document.querySelector('#notes-list');
+const noteListDeleted = document.querySelector('#notes-list-deleted');
 const content = document.querySelector('#content');
 const editor = document.querySelector('#editor');
 const CLS = document.querySelector('#clear-btn');
@@ -16,6 +17,7 @@ const removedBtn = document.querySelector('.fa-times');
 
 let Delta = Quill.import('delta');
 let notesArr = [];
+let notesArrDeleted = [];
 let activeNoteID;
 
 
@@ -76,13 +78,17 @@ function initialize() {
   //     clearLS()
   // });
 
+  /* SAVE FUNKTION */
+  
   document.querySelector('#save-btn').addEventListener('click', function() {
     createNote();
     renderNotesList(notesArr);
   })
+
   noteList.addEventListener('click', function(evt) {
     let clickedLI = evt.target.closest('li');
     let clickedID = clickedLI.getAttribute('data-id');
+    console.log(clickedLI)
     // som det är nu, resulterar alla klick på en note
     // i en "load", dvs editorn sätts till det innehåller
     // TODO: kolla om anv klickade på stjärnan
@@ -177,8 +183,10 @@ function readNote(id) {
 }
 
 function setEditor(note) {
-  quill.setContents(note.content);
-  setActiveNoteID(note.id);
+  if(note) {
+    quill.setContents(note.content);
+    setActiveNoteID(note.id);
+  }
 }
 
 function updateNote(id) {
@@ -190,16 +198,33 @@ function updateNote(id) {
 }
 
 function getNotes() {
-  let notesArrStr = localStorage.getItem('notesArr');
+  let notesArrStr = window.localStorage.getItem('notesArr');
   if (!notesArrStr) {
       return;
   }
   notesArr = JSON.parse(notesArrStr);
 }
 
+function deleteNote(idToDelete) {
+  console.log('idToDelete: ',idToDelete)
+  let allNotes = JSON.parse(window.localStorage.getItem('notesArr'));
+ // const allNotes = getNotes();
+  console.log('allNotes: ',allNotes)
+  let noteObjToDelete = allNotes.find(note => note.id == idToDelete);
+  notesArrDeleted.push(noteObjToDelete);
+  let noteObjToKeep = allNotes.filter(note => note.id != idToDelete);
+  localStorage.setItem('notesArr', JSON.stringify(noteObjToKeep));
+  console.log('noteObjToKeep: ',noteObjToKeep);
+  notesArr = noteObjToKeep;
+  saveNotes()
+  renderNotesList(notesArr)
+}
+
 function saveNotes() {
   localStorage.setItem('notesArr', JSON.stringify(notesArr))
+  localStorage.setItem('notesArrDeleted', JSON.stringify(notesArrDeleted))
 }
+
 
 
 // function oldNoteObjToHTML(noteObj) {
@@ -210,17 +235,29 @@ function saveNotes() {
 //   return LI
 // }
 
+
 function noteObjToHTML(noteObj) {
   let LI = document.createElement('li');
   LI.setAttribute('data-id', noteObj.id);
-  LI.innerHTML = `<i class="far fa-star unfilled"></i><i class="fas fa-trash removed"></i> <h2>${noteObj.title}</h2> <h3>${newSavedDate(noteObj.id)}</h3> <p>${noteObj.text}</p>`
+  let starId = `starId-${noteObj.id}`;
+  LI.innerHTML = `<i onClick="toggleFav(${noteObj.id})" id="${starId}" class="far fa-star unfilled"></i><i onClick="deleteNote(${noteObj.id})" class="fas fa-trash removed"></i> <h2>${noteObj.title}</h2> <h3>${newSavedDate(noteObj.id)}</h3> <p>${noteObj.text}</p>`
+  
   return LI
 }
+
+
 
 function renderNotesList(arr) {
   noteList.innerHTML = '';
   arr.forEach(function (note) {
       noteList.appendChild(noteObjToHTML(note));
+  })
+}
+
+function renderNotesListDeleted(arr) {
+  noteListDeleted.innerHTML = '';
+  arr.forEach(function (note) {
+      noteListDeleted.appendChild(noteObjToHTML(note));
   })
 }
 
@@ -238,7 +275,9 @@ function favNotes(note) {
 
 function toggleFav(id) {
   let noteObj = notesArr.find(note => note.id == id);
+  console.log('Before noteObj: ', noteObj)
   noteObj.favourite = !noteObj.favourite;
+  console.log('After noteObj: ', noteObj)
   saveNotes();
 }
 
