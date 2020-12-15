@@ -132,8 +132,8 @@
   /* width: 300px; */
   height: 85vh;
   overflow-y: scroll;
-  scrollbar-color: auto;
-  scrollbar-width: thin;
+  /* scrollbar-color: auto;
+  scrollbar-width: thin; */
 }
 
 /*li*/
@@ -214,6 +214,7 @@
 }
 
 #notes-list h2{
+  margin-top: 15px;
   font-size: 20px;
 }
 
@@ -226,4 +227,46 @@
 
 #notes-list p {
   font-size: 15px;
+}
+
+/* PRINT */
+@media print {
+
+  @page {
+    margin: 0;
+  }
+
+   body {
+    visibility: hidden;
+  }
+
+  .ql-editor {
+    border: none;
+    box-shadow: none;
+    position: absolute;
+  }
+
+  #editor * {
+    margin: 1% 1% 0 1%;
+    visibility: visible;
+    overflow-y: hidden;
+    position: relative;
+  }
+
+  #editor {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  #editor::-webkit-scrollbar {
+    -ms-overflow-style: none;
+    width: 0 !important;
+  }
+  .ql-tooltip.ql-hidden {
+    visibility: hidden;
+  }   
+
+
 }

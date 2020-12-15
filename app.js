@@ -14,6 +14,8 @@ const removedBtn = document.querySelector('.fa-times');
 /*VARIABLES*/
 let notesArr = [];
 let activeNoteID;
+let isShowingFavourites = false;
+let isShowingRemoved = false;
 
 
 /*QUILL*/
@@ -65,19 +67,25 @@ function initialize() {
   });
 
   saveNoteButton.addEventListener('click', function() {
+    if (activeNoteID) {
+      updateNote()
+    } else {
     createNote();
     renderNotesList(notesArr);
+  }
   });
 
   noteList.addEventListener('click', function(evt) {
     let clickedLI = evt.target.closest('li');
     let clickedID = clickedLI.getAttribute('data-id');
-    // let clickedNote
-    // if (evt.classList.contains('fa-star')) {
-    //   let fav = evt.target.parentElement.dataset.key;
-    //   toggleFav(fav);
-    // } 
+    let clickedNote
+    
+    if (evt.target.classList.contains('fa-star')) {
+      //let fav = evt.target.clickedID;
+      toggleFav(clickedID);
+    } else {
     setEditor(readNote(clickedID));
+  }
   });
 
 getNotes();
@@ -100,8 +108,22 @@ function createNote() {
   saveNotes();
   setActiveNoteID(noteObj.id);
   renderNotesList(notesArr);
+  clearEditor();
 }
 
+// UPDATE NOTE
+function updateNote() {
+  let noteToUpdate = readNote(activeNoteID)
+  noteToUpdate.content = quill.getContents();
+  noteToUpdate.text = findText();
+  noteToUpdate.title = findTitle();
+  let newNotesArr = notesArr.filter(note => note.id !== activeNoteID);
+  notesArr = newNotesArr;
+  notesArr.unshift(noteToUpdate);
+  saveNotes();
+  //setActiveNoteID(noteObj.id);
+  renderNotesList(notesArr);
+}
 //TITLE - in note-list
 function findTitle() {
   let editorContents = document.querySelector('.ql-editor');
@@ -154,7 +176,8 @@ function noteObjToHTML(noteObj) {
   let LI = document.createElement('li');
   LI.setAttribute('data-id', noteObj.id);
   LI.innerHTML = `
-  <span>${noteObj.favourite ? '<i class="far fa-star unfilled"></i>' : '<i class="fas fa-star"></i>'}</span> 
+  <span><i class="fa${noteObj.favourite ? 's' : 'r'} fa-star unfilled"></i></span> 
+  <!--<span>${noteObj.favourite ? '<i class="far fa-star unfilled"></i>' : '<i class="fas fa-star"></i>'}</span>--> 
   <i class="fas fa-trash removed"></i> 
   <h2>${noteObj.title}</h2> 
   <h3>${savedDate(noteObj.id)}</h3> 
@@ -164,7 +187,14 @@ function noteObjToHTML(noteObj) {
 
 function renderNotesList(arr) {
   noteList.innerHTML = '';
-  arr.forEach(function (note) {
+  arr.filter(note => !note.removed).forEach(function (note) {
+      noteList.appendChild(noteObjToHTML(note));
+  });
+}
+
+function renderRemovedNotesList(arr) {
+  noteList.innerHTML = '';
+  arr.filter(note => note.removed).forEach(function (note) {
       noteList.appendChild(noteObjToHTML(note));
   });
 }
@@ -181,12 +211,24 @@ function favNotes(note) {
   return note.favourite;
 }
 
+// DELTED NOTES
+function delNotes(note) {
+  return note.removed;
+}
+
 function toggleFav(id) {
   let noteObj = notesArr.find(note => note.id == id);
   noteObj.favourite = !noteObj.favourite;
   saveNotes();
+  renderNotesList(notesArr);
 }
 
+function purgeNote(id) {
+  let newNotesArr = notesArr.filter(note => note.id !== id);
+  notesArr = newNotesArr;
+  saveNotes();
+  renderNotesList(notesArr);
+}
 //CLEAR LS
 function clearLS() {
   localStorage.clear();
@@ -195,6 +237,7 @@ function clearLS() {
 //CLEAR EDITOR
 function clearEditor() {
   quill.setText('');
+  setActiveNoteID(null)
 }
 
 function setActiveNoteID(id) {
