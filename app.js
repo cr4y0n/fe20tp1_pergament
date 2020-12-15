@@ -59,12 +59,18 @@ document.addEventListener('DOMContentLoaded', initialize);
 function initialize() {
 
   myNotesBtn.addEventListener('click', function(evt) {
+    myNotesBtn.className = "highlightedElement";
+    favBtn.className = "";
+    delBtn.className = "";
     isShowingNotes = !isShowingNotes;
     renderNotesList(notesArr);
   })
 
 
   favBtn.addEventListener('click', function(evt) {
+    favBtn.className = "highlightedElement";
+    myNotesBtn.className = "";
+    delBtn.className = "";
     isShowingFavourites = !isShowingFavourites;
     if (isShowingFavourites) {
       renderNotesList(searchNotes('', favNotes));
@@ -75,6 +81,9 @@ function initialize() {
 
 
   delBtn.addEventListener('click', function(evt) {
+    delBtn.className = "highlightedElement";
+    myNotesBtn.className = "";
+    favBtn.className = "";
     isShowingRemoved = !isShowingRemoved;
     // trashRestore.classList.toggle("hide-me");
     // dumpsterFire.classList.toggle("hide-me");
@@ -276,6 +285,7 @@ function toggleFav(id) {
   noteObj.favourite = !noteObj.favourite;
   saveNotes();
   renderNotesList(notesArr);
+
 }
 
 function purgeNote(id) {

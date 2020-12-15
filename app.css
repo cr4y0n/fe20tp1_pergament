@@ -36,12 +36,19 @@
   padding: 0;
 }
 
+/*HIGHLIGHTED ITEM IN NAVBAR*/
+
+.highlightedElement {
+  /*background-color: rgb(231, 231, 231);*/
+  color: white;
+}
+
 /* #navbar:active {
   /* border: 2px solid white; 
 }*/
 
 #navbar li:hover {
-  opacity: 0.5;
+  color: white;
   cursor: pointer;
 }
 
@@ -50,8 +57,12 @@
   text-shadow: 3px 2px 3px rgba(255, 255, 255, 0.548);
 }
 
-#favorite-notes-item {
+#home a, #home a:visited {
   color: black;
+}
+
+#home a:active {
+  color: white;
 }
 
 /*SEARCH FIELD AND ADD NEW NOTE BUTTON CONTAINERS*/
