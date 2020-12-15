@@ -4,6 +4,10 @@
   font-family: 'Manrope', sans-serif;
 }
 
+.hide-me {
+  visibility: hidden !important;
+}
+
 .note-app {
   display: flex;
 }
@@ -32,17 +36,22 @@
   padding: 0;
 }
 
-#navbar li a {
-  color: black;
-}
+/* #navbar:active {
+  /* border: 2px solid white; 
+}*/
 
-#navbar li a:hover {
+#navbar li:hover {
   opacity: 0.5;
+  cursor: pointer;
 }
 
 #home .fa-quora{
   font-size: 50px;
   text-shadow: 3px 2px 3px rgba(255, 255, 255, 0.548);
+}
+
+#favorite-notes-item {
+  color: black;
 }
 
 /*SEARCH FIELD AND ADD NEW NOTE BUTTON CONTAINERS*/
@@ -77,34 +86,33 @@
   cursor: pointer;
 }
 
-/*NEW NOTE BUTTON*/
-
-#new-note-btn {
-  margin: 0;
-  padding: 0;
-  border: none;
-  border-radius: 8px;
-  background: white;
-}
-
-.fa-edit {
-  font-size: 22px;
-  text-align: center;
-  padding: 5px;
-}
-.fa-edit:hover {
-  cursor: pointer;
-}
 
 /*FAVOURITE NOTE BUTTON*/
 
-.unfilled {
+.star {
+  color: gold;
+}
+
+.star:hover {
+  cursor: pointer;
+}
+
+/* .unfilled {
   position: relative;
   left: 210px;
   top: -5px;
-}
+} */
 
 /*REMOVED NOTE BUTTON*/
+
+.garbage {
+  color: rgb(65, 65, 65);
+  margin-left: 10px;
+}
+
+.garbage:hover {
+  cursor: pointer;
+}
 
 .removed {
   /* position: relative;
@@ -126,14 +134,15 @@
 
 #navbar-items { 
   text-align: center;
+  color: black;
 }
 
 #scroller {
   /* width: 300px; */
   height: 85vh;
   overflow-y: scroll;
-  scrollbar-color: auto;
-  scrollbar-width: thin;
+  /* scrollbar-color: auto;
+  scrollbar-width: thin; */
 }
 
 /*li*/
@@ -174,13 +183,16 @@
 /* EDITOR BUTTONS - SAVE & CLEAR */
 
 #container-btn {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   right: 50px;
   bottom: 50px;
 }
 
-#clear-btn, #save-btn:hover {
+#clear-btn:hover, #save-btn:hover, .print:hover {
   cursor: pointer;
+  color: #9f51f8;
 }
 
 /* SAVE BUTTON */
@@ -192,19 +204,33 @@
 
 .fa-floppy-o {
   font-size: 40px;
-  padding-right: 10px;
+  margin: 5px;
 }
 
-/* CLEAR EDITOR BUTTON */
+/*NEW NOTE BUTTON*/
 
 #clear-btn {
   border: hidden;
   background: none;
 }
 
-.fa-eraser {
+.fa-plus-square {
   font-size: 40px;
+  margin: 5px;
 }
+
+/* PRINT BUTTON */
+
+.print{
+  border: hidden;
+  background: none;
+}
+
+.fa-print {
+  font-size: 40px;
+  margin: 5px;
+}
+
 
 /* NOTE-LIST */
 
@@ -214,6 +240,7 @@
 }
 
 #notes-list h2{
+  margin-top: 15px;
   font-size: 20px;
 }
 
@@ -226,4 +253,49 @@
 
 #notes-list p {
   font-size: 15px;
+}
+
+/* PRINT */
+@media print {
+
+  @page {
+    margin: 0;
+  }
+
+   body {
+    visibility: hidden;
+  }
+
+  /* .ql-editor {
+    border: none;
+    box-shadow: none;
+    position: absolute;
+  } */
+
+  #editor * {
+    margin: 1% 1% 0 1%;
+    visibility: visible;
+    overflow-y: hidden;
+    position: relative;
+  }
+
+  #editor {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  #editor::-webkit-scrollbar {
+    -ms-overflow-style: none;
+    width: 0 !important;
+  }
+
+  .print:last-child {
+    page-break-after: auto;
+}
+  /* .ql-tooltip.ql-hidden {
+    visibility: hidden;
+  }    */
+
 }
