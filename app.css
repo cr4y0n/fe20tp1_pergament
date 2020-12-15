@@ -107,9 +107,9 @@
 /*REMOVED NOTE BUTTON*/
 
 .removed {
-  position: relative;
+  /* position: relative;
   left: 225px;
-  top: -3px;
+  top: -3px; */
   font-size: 23px;
 }
 
@@ -126,6 +126,14 @@
 
 #navbar-items { 
   text-align: center;
+}
+
+#scroller {
+  /* width: 300px; */
+  height: 85vh;
+  overflow-y: scroll;
+  scrollbar-color: auto;
+  scrollbar-width: thin;
 }
 
 /*li*/
