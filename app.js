@@ -9,13 +9,23 @@ const search = document.querySelector('#search-field');
 const favBtn = document.querySelector('#favorite-notes-item');
 const clearAllNotes = document.querySelector('#clearAllNotes');
 const removedBtn = document.querySelector('.fa-times');
-
+const delBtn = document.querySelector('#deleted-notes-item');
+const trashRestore = document.querySelector('.fa-trash-restore');
+const dumpsterFire = document.querySelector('.fa-dumpster-fire');
+const myNotesBtn = document.querySelector('#saved-notes-item');
 
 /*VARIABLES*/
 let notesArr = [];
 let activeNoteID;
+let isShowingNotes = false;
 let isShowingFavourites = false;
 let isShowingRemoved = false;
+
+// DELTED NOTES
+function delNotes(note) {
+  console.log(note.removed)
+  return note.removed;
+}
 
 
 /*QUILL*/
@@ -47,8 +57,32 @@ document.addEventListener('DOMContentLoaded', initialize);
 
 // EVENTLISTENERS
 function initialize() {
-  document.querySelector('#favorite-notes-item').addEventListener('click', function(evt) {
-    renderNotesList(searchNotes('', favNotes));
+
+  myNotesBtn.addEventListener('click', function(evt) {
+    isShowingNotes = !isShowingNotes;
+    renderNotesList(notesArr);
+  })
+
+
+  favBtn.addEventListener('click', function(evt) {
+    isShowingFavourites = !isShowingFavourites;
+    if (isShowingFavourites) {
+      renderNotesList(searchNotes('', favNotes));
+    } else {
+      renderNotesList(notesArr)
+    }
+  });
+
+
+  delBtn.addEventListener('click', function(evt) {
+    isShowingRemoved = !isShowingRemoved;
+    // trashRestore.classList.toggle("hide-me");
+    // dumpsterFire.classList.toggle("hide-me");
+    if (isShowingRemoved) {
+    renderAllNotesList(searchNotes('', delNotes));
+  } else  {
+    renderNotesList(notesArr)
+  }
   });
 
   search.addEventListener('input', function(evt) {
@@ -78,12 +112,14 @@ function initialize() {
   noteList.addEventListener('click', function(evt) {
     let clickedLI = evt.target.closest('li');
     let clickedID = clickedLI.getAttribute('data-id');
-    let clickedNote
-    
+
     if (evt.target.classList.contains('fa-star')) {
-      //let fav = evt.target.clickedID;
       toggleFav(clickedID);
-    } else {
+    } if (evt.target.classList.contains('fa-trash')) {
+      toggleDel(clickedID);
+    } if (evt.target.classList.contains('fa-recycle')) {
+      toggleBack(clickedID);
+  } else {
     setEditor(readNote(clickedID));
   }
   });
@@ -108,7 +144,7 @@ function createNote() {
   saveNotes();
   setActiveNoteID(noteObj.id);
   renderNotesList(notesArr);
-  clearEditor();
+  // clearEditor();
 }
 
 // UPDATE NOTE
@@ -176,9 +212,8 @@ function noteObjToHTML(noteObj) {
   let LI = document.createElement('li');
   LI.setAttribute('data-id', noteObj.id);
   LI.innerHTML = `
-  <span><i class="fa${noteObj.favourite ? 's' : 'r'} fa-star unfilled"></i></span> 
-  <!--<span>${noteObj.favourite ? '<i class="far fa-star unfilled"></i>' : '<i class="fas fa-star"></i>'}</span>--> 
-  <i class="fas fa-trash removed"></i> 
+  <span><i class="fa${noteObj.favourite ? 's' : 'r'} fa-star star"></i></span>
+  <span><i class="fas fa-${noteObj.removed ? 'recycle' : 'trash'} garbage"></i></span>
   <h2>${noteObj.title}</h2> 
   <h3>${savedDate(noteObj.id)}</h3> 
   <p>${noteObj.text}</p>`
@@ -192,6 +227,12 @@ function renderNotesList(arr) {
   });
 }
 
+function renderAllNotesList(arr) {
+  noteList.innerHTML = '';
+  arr.forEach(function (note) {
+      noteList.appendChild(noteObjToHTML(note));
+  });
+}
 function renderRemovedNotesList(arr) {
   noteList.innerHTML = '';
   arr.filter(note => note.removed).forEach(function (note) {
@@ -203,7 +244,10 @@ function renderRemovedNotesList(arr) {
 function searchNotes(str, func = function (note) {
   return note.text.toLowerCase().includes(str.toLowerCase())
 }) {
-  return notesArr.filter(func)
+  console.log("func is " + func)
+  let filteredArr = notesArr.filter(func);
+  console.log(filteredArr)
+  return filteredArr
 }
 
 //FAVORITE NOTES
@@ -211,9 +255,20 @@ function favNotes(note) {
   return note.favourite;
 }
 
-// DELTED NOTES
-function delNotes(note) {
-  return note.removed;
+
+function toggleDel(id) {
+  let noteObj = notesArr.find(note => note.id == id);
+  noteObj.removed = !noteObj.removed;
+  saveNotes();
+  renderNotesList(notesArr);
+}
+
+function toggleBack(id) {
+  let noteObj = notesArr.find(note => note.id == id);
+  noteObj.removed = !noteObj.removed;
+  saveNotes();
+  console.log('toggle back clicked');
+  renderNotesList(notesArr);
 }
 
 function toggleFav(id) {
@@ -229,6 +284,7 @@ function purgeNote(id) {
   saveNotes();
   renderNotesList(notesArr);
 }
+
 //CLEAR LS
 function clearLS() {
   localStorage.clear();
@@ -243,4 +299,3 @@ function clearEditor() {
 function setActiveNoteID(id) {
   activeNoteID = id;
 }
-

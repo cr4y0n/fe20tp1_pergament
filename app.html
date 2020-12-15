@@ -9,14 +9,14 @@
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
   <link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
   <link rel="stylesheet" href="app.css">
-  <title>Quire - notes</title>
+  <title>Quire - My notes</title>
 </head>
 <body>
   <div class="note-app"> 
      <nav class="note-app-part" id="navbar">
        <ul id="navbar-items">
         <li title="Home" id="home"><a href="./index.html"><i class="fab fa-quora"></i></a></li>
-        <li title="My Notes" id="saved-notes-item"><a href="./app.html"><i class="far fa-sticky-note"></i></a></li>
+        <li title="My Notes" id="saved-notes-item"><i class="far fa-sticky-note"></i></li>
         <li title="Favorites" id="favorite-notes-item"><i class="fas fa-star"></i></li>
         <li title="Deleted" id="deleted-notes-item"><i class="fas fa-trash"></i> 
           <!-- <i class="fas fa-trash-restore-alt"></i> -->
@@ -25,14 +25,15 @@
      <section class="note-app-part" id="notebar">
        <div id="input-container">
          <div id="search-container">
-           <input type="text" id="search-field" placeholder="Search..." size="20">
-           <i id="search-field-submit" class="fas fa-search"></i>
-         </div>
-         <div id="add-new-note-container">
-           <button id="new-note-btn"><i class="fas fa-edit"></i></button>
+           <input type="text" id="search-field" placeholder="Search..." size="30">
+           <!-- <i id="search-field-submit" class="fas fa-search"></i> -->
          </div>
        </div>
        
+       <!-- <i class="fas fa-recycle"></i> -->
+      <i class="hide-me fas fa-trash-restore"></i>
+      <i class="hide-me fas fa-dumpster-fire"></i>
+      
           <!-- <div id="clear-container">
            <button id="clearAllNotes">Clear all notes</button>
          </div> -->
@@ -47,9 +48,11 @@
        
        <div id="editor"></div>
        <div id="container-btn">
-        <button onclick="window.print();" class="print"><i class="fas fa-print"></i></button>
-        <button id="save-btn"><i class="fa fa-floppy-o"></i></button>
-        <button id="clear-btn"><i class="fa fa-eraser"></i></button>
+        
+        
+        <button id="clear-btn"><i class="far fa-plus-square" title="New Note"></i></button>
+        <button id="save-btn"><i class="fa fa-floppy-o" title="Save Note"></i></button>
+        <button onclick="window.print();" class="print" title="Print Note"><i class="fas fa-print"></i></button>
       </div>
      </main>
   </div>
