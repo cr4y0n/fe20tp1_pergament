@@ -15,45 +15,35 @@
   <div class="note-app"> 
      <nav class="note-app-part" id="navbar">
        <ul id="navbar-items">
-        <li title="Home" id="home"><a href="./index.html"><i class="fab fa-quora"></i></a></li>
-        <li title="My Notes" id="saved-notes-item"><i class="far fa-sticky-note"></i></li>
-        <li title="Favorites" id="favorite-notes-item"><i class="fas fa-star"></i></li>
-        <li title="Deleted" id="deleted-notes-item"><i class="fas fa-trash"></i></li>
-          <!-- <i class="fas fa-trash-restore-alt"></i> -->
+          <li title="Home" id="home"><a href="./index.html"><i class="fab fa-quora"></i></a></li>
+          <li title="My Notes" id="saved-notes-item"><i class="far fa-sticky-note"></i></li>
+          <li title="Favorites" id="favorite-notes-item"><i class="fas fa-star"></i></li>
+          <li title="Deleted" id="deleted-notes-item"><i class="fas fa-trash"></i></li>
        </ul>
      </nav>
-     <section class="note-app-part" id="notebar">
-       <div id="input-container">
-         <div id="search-container">
-           <input type="text" id="search-field" placeholder="Search..." size="30">
-           <!-- <i id="search-field-submit" class="fas fa-search"></i> -->
-         </div>
-       </div>
+     <div class="note-app-part" id="notebar">
        
-       <!-- <i class="fas fa-recycle"></i> -->
-      <i class="hide-me fas fa-trash-restore"></i>
-      <i class="hide-me fas fa-dumpster-fire"></i>
-      
-          <!-- <div id="clear-container">
-           <button id="clearAllNotes">Clear all notes</button>
-         </div> -->
+        <div id="input-container">
+          <div id="search-container">
+            <input type="text" id="search-field" placeholder="Search..." size="30">
+          </div>
+        </div>
 
-         <div id="scroller">
-            <ul id="notes-list">
-            </ul>
-         </div>
-     </section>
+        <div id="note-wrapper">
+          <div id="scroller">
+              <ul id="notes-list"></ul>
+          </div>
+        </div>
+
+      </div>
 
      <main class="note-app-part" id="note-editor">
-       
        <div id="editor"></div>
-       <div id="container-btn">
-        
-        
-        <button id="clear-btn"><i class="far fa-plus-square" title="New Note"></i></button>
-        <button id="save-btn"><i class="fa fa-floppy-o" title="Save Note"></i></button>
-        <button onclick="window.print();" class="print" title="Print Note"><i class="fas fa-print"></i></button>
-      </div>
+        <div id="container-btn">
+              <button id="clear-btn"><i class="far fa-plus-square" title="New Note"></i></button>
+              <button id="save-btn"><i class="fa fa-floppy-o" title="Save Note"></i></button>
+              <button onclick="window.print();" class="print" title="Print Note"><i class="fas fa-print"></i></button>
+          </div>
      </main>
   </div>
 </body>

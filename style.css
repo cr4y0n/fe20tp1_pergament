@@ -9,6 +9,7 @@
 a, li {
   text-decoration: none;
   list-style-type: none;
+  color: black;
 }
 
 body {
@@ -39,7 +40,6 @@ body {
 
 #homeLink img{
   width: 100px;
-  padding: 0;
 }
 
 /*LANDING PAGE*/
@@ -60,22 +60,6 @@ h1 {
   line-height: 1.1em;
   font-size: 3em;
   margin-top: 4rem;
-}
-
-#startBtn{
-  max-width: 10em;
-  color: white;
-  background-color: #8c30f5;
-  padding: 15px 40px;
-  margin-top: 1em;
-  font-size: 20px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-}
-
-#startBtn:hover {
-  background-color: #5f12b8;  
 }
 
 #titleImg {
@@ -113,7 +97,6 @@ h2 {
   max-width: 800px;
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 90px;
 }
 
 .featureItem {
@@ -122,16 +105,16 @@ h2 {
 }
 
 .featureIcon {
-  font-size: 600%;
+  font-size: 500%;
 }
 
 #gotchaBtn{
   position: relative;
   max-width: 300px;
-  color: white;
-  background-color: #8c30f5;
+  background: #8c30f5;
   padding: 15px 40px;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 100px;
   font-size: 20px;
   border-radius: 10px;
   border: none;
@@ -139,7 +122,7 @@ h2 {
 }
 
 #gotchaBtn:hover {
-  background-color: #5f12b8;  
+  background-color: #9743f7;  
 }
 
 .hide-me {
@@ -161,4 +144,22 @@ footer p {
   font-weight: 400;
   line-height: 24px;
   color: white;
+}
+
+@media screen and (max-width: 425px) {
+
+  h1 {
+    width: 90%;
+    font-size: 2em;
+  }
+
+  #titleImg {
+    max-width: 20em;
+  }
+
+  #featureList {
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+  }
 }

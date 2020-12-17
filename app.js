@@ -1,6 +1,5 @@
 /*CONSTANTS*/
 const saveNoteButton = document.querySelector('#save-btn');
-const createNoteButton = document.querySelector('#new-note-btn');
 const noteList = document.querySelector('#notes-list');
 const content = document.querySelector('#content');
 const editor = document.querySelector('#editor');
@@ -8,10 +7,7 @@ const clear = document.querySelector('#clear-btn');
 const search = document.querySelector('#search-field');
 const favBtn = document.querySelector('#favorite-notes-item');
 const clearAllNotes = document.querySelector('#clearAllNotes');
-const removedBtn = document.querySelector('.fa-times');
 const delBtn = document.querySelector('#deleted-notes-item');
-const trashRestore = document.querySelector('.fa-trash-restore');
-const dumpsterFire = document.querySelector('.fa-dumpster-fire');
 const myNotesBtn = document.querySelector('#saved-notes-item');
 
 /*VARIABLES*/
@@ -85,8 +81,6 @@ function initialize() {
     myNotesBtn.className = "";
     favBtn.className = "";
     isShowingRemoved = !isShowingRemoved;
-    // trashRestore.classList.toggle("hide-me");
-    // dumpsterFire.classList.toggle("hide-me");
     if (isShowingRemoved) {
     renderAllNotesList(searchNotes('', delNotes));
   } else  {
@@ -166,9 +160,9 @@ function updateNote() {
   notesArr = newNotesArr;
   notesArr.unshift(noteToUpdate);
   saveNotes();
-  //setActiveNoteID(noteObj.id);
   renderNotesList(notesArr);
 }
+
 //TITLE - in note-list
 function findTitle() {
   let editorContents = document.querySelector('.ql-editor');
