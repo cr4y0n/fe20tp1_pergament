@@ -1,4 +1,5 @@
-# QUILL TEXT EDITOR
+# QUIRE TEXT EDITOR
+![Quire logo](https://i.ibb.co/ScT1JV3/logo.png)
 > Writing never been easier.
 
 ## Table of contents
