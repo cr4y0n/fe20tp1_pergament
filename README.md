@@ -40,7 +40,7 @@ This school project was collaborated by the following KYH students:
 * Restore deleted notes
 * Search specific notes
 
-## To-do 🛠
+## To Do 🛠
 **List of features left to do:**
 -   Bugs: Fix icon colors when clicked in the navbar
 -   Make search enabled on titles
