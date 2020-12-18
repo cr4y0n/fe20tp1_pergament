@@ -13,7 +13,7 @@ This school project was collaborated by the following KYH students:
 * [**General info**](#Generalinfo-)  
 * [**Preview**](#Preview-)
 *  [**Features**](#Features-)
-*  [**To Do**](#ToDo-)
+*  [**To-Do**](#To-Do-)
 * [**Technologies**](#Technologies-)
 *  [**Links**](#Links-)
 
@@ -40,7 +40,7 @@ This school project was collaborated by the following KYH students:
 * Restore deleted notes
 * Search specific notes
 
-## To Do 🛠
+## To-Do 🛠
 **List of features left to do:**
 -   Bugs: Fix icon colors when clicked in the navbar
 -   Make search enabled on titles
