@@ -11,7 +11,7 @@ This school project was collaborated by the following KYH students:
 
 ## Table of contents 📋
 * [**General info**](#**Generalinfo**)  
-* [**Preview**](#Preview)
+* [**Preview**](#Preview📸)
 *  [**Features**](#features)
 *  [**To Do**](#ToDo)
 * [**Technologies**](#Technologies)
@@ -24,7 +24,7 @@ This school project was collaborated by the following KYH students:
 ****A functioning note taking app where you can create, edit, favorite, delete and save notes in local storage (up to 5MB). A separate landing page with information of the app and eventually a sign-up page as well as contacts and more.****
 
 
-## Preview 
+## Preview 📸
 [CLICK HERE FOR HOSTED DEMO VERSION](http://quire-pergament.surge.sh/)
 ![enter image description here](https://i.ibb.co/8X4XP9S/screen-quire.png)
 
