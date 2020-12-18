@@ -1,14 +1,13 @@
 # QUIRE TEXT EDITOR
 
 > ![enter image description here](https://i.ibb.co/ScT1JV3/logo.png)
-
+ 
 Writing has never been easier.
 ## Collaborators
 
 This school project was collaborated by the following KYH students:
 
 [Alexander Alazar](https://github.com/a-star128), [Mamite Andersson](https://github.com/mamite100), [Joel Hjelmstedt](https://github.com/joelbeats), [Sandra Persson](https://github.com/sandrapersson149), [Filipa Spajic](https://github.com/cr4y0n).
-
 
 ## Table of contents
 * [**General info**](#**Generalinfo**)  
