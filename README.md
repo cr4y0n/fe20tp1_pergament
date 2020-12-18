@@ -35,7 +35,7 @@ This school project was collaborated by the following KYH students:
 * Edit notes
 * Save notes
 * Print notes
-* List notes by favourites or delete
+* List notes by favourites or deleted
 * Restore deleted notes
 * Search specific notes
 
@@ -48,6 +48,9 @@ This school project was collaborated by the following KYH students:
 -   Enable different fonts in the editor
 - Add Autosave
 -   Add browser compatiblity
+-   Add Sign-up Page
+-   Add Contacts page
+
 
 ## Technologies
 **Languages:**
