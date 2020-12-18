@@ -1,64 +1,70 @@
 # QUIRE TEXT EDITOR
-![Quire logo](https://i.ibb.co/ScT1JV3/logo.png)
-> Writing never been easier.
+
+> ![enter image description here](https://i.ibb.co/ScT1JV3/logo.png)
+Writing never been easier.
+## Collaborators
+
+This school project was collaborated by the following KYH students:
+
+[Alexander Alazar](https://github.com/a-star128), [Mamite Andersson](https://github.com/mamite100), [Joel Hjelmstedt]((https://github.com/joelbeats)), [Sandra Persson]((https://github.com/sandrapersson149)), [Filipa Spajic]((https://github.com/cr4y0n)).
+
 
 ## Table of contents
-* [General info](#general-info)  
-* [Screenshots](#screenshots)
-* [Technologies](#technologies)
-* [Setup](#setup)
-* [Features](#features)
-* [Status](#status)
-* [Inspiration](#inspiration)
-* [Contact](#contact)
+* [**General info**](#**Generalinfo**)  
+* [**Preview**](#Preview)
+*  [**Features**](#features)
+*  [**To Do**](#ToDo)
+* [**Technologies**](#technologies)
+*  [**Links**](#Links)
+
 
 ## General info
-A Schoolproject made by Filipa, Joel, Sandra, Mamite and Alexander.
+
+****A functioning note taking app where you can create, edit, favorite, delete and save notes in local storage (up to 5MB). A separate landing page with information of the app and eventually a sign-up page as well as contacts and more.****
 
 
-With a lightweight but powerful text editor, Quill allows you to write your notes everywhere at anytime.
+## Preview
+![enter image description here](https://i.ibb.co/8X4XP9S/screen-quire.png)
 
-
-## Screenshots
-![Overview of the Quill editor](https://i.ibb.co/17t5dVv/Sk-rmbild-2020-12-18-125458.jpg)
-Overview of the Quill editor.
-
-## Technologies
-HTML
-CSS
-JAVASCRIPT
-QUILL RICH TEXT EDITOR Libary
-
-## Setup
-Describe how to install / setup your local environement / add link to demo version.
-
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
 
 ## Features
-List of features ready and TODOs for future development
-* LEIGHTWEIGHT AND EASY TO USE
-* MOBILE FRIENDLY
-* Print your work when you are done!
+**List of features ready:**
+* Create notes
+* Edit notes
+* Save notes
+* Print notes
+* List notes by favourites or delete
+* Restore deleted notes
+* Search specific notes
 
-To-do list:
-* Add Autosave
-* Adding templates/Font families
-* Add Dark Mode
+## To-do
+**List of features left to do:**
+-   Bugs: Fix icon colors when clicked in the navbar
+-   Make search enabled on titles
+-   Better responsitivity
+-   Enable dark mode and some themes
+-   Enable different fonts in the editor
+- Add Autosave
+-   Add browser compatiblity
 
-## Status
-Project is: Finished.
+## Technologies
+**Languages:**
+  - HTML 5   
+ - CSS 3   
+ - Javascript
 
-## Inspiration
-Add here credits. Project inspired by..., based on...
+  **Libraries:**
+-   Quill
+    
+   **Prototype sites:**
+-   Figma
 
-## Contact
-Created by:
- - [Filipa Spajic](https://github.com/cr4y0n)
- - [Sandra Persson](https://github.com/sandrapersson149)
- - [Joel Hjelmstedt](https://github.com/joelbeats)
- - [Mamite Andersson](https://github.com/mamite100)
- - [Alexander Alazar](https://github.com/a-star128)
+## LINKS
+
+[Surge](http://quire-pergament.surge.sh/)
+
+[ASANA](https://app.asana.com/share/studentkyh/pergament/310223894399359/f0e2f8a8db30abb6fd61938749e6b9f4)
+
+[FIGMA Prototype](https://www.figma.com/file/Em2xXKEoeRYKaa3uYWjKWg/Untitled?node-id=0%3A1)
 
 
