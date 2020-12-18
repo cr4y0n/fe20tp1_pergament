@@ -286,7 +286,7 @@
 }
 
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 435px) {
   .note-app {
     display: flex;
     flex-direction: column;
