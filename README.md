@@ -9,17 +9,17 @@ This school project was collaborated by the following KYH students:
 
 [Alexander Alazar](https://github.com/a-star128) 👨🏿‍🚀, [Mamite Andersson](https://github.com/mamite100) 👩🏿‍💻, [Joel Hjelmstedt](https://github.com/joelbeats) 🤯, [Sandra Persson](https://github.com/sandrapersson149) ✨, [Filipa Spajic](https://github.com/cr4y0n) 🥳
 
-## Table of contents 
+## Table of contents 📋
 * [**General info**](#**Generalinfo**)  
 * [**Preview**](#Preview)
 *  [**Features**](#features)
 *  [**To Do**](#ToDo)
-* [**Technologies**](#technologies)
+* [**Technologies**](#Technologies)
 *  [**Links**](#Links)
 
 
 
-## General info 📢
+## General info 
 
 ****A functioning note taking app where you can create, edit, favorite, delete and save notes in local storage (up to 5MB). A separate landing page with information of the app and eventually a sign-up page as well as contacts and more.****
 
