@@ -3,13 +3,13 @@
 > ![enter image description here](https://i.ibb.co/ScT1JV3/logo.png)
  
 Writing has never been easier.
-## Collaborators
+## Collaborators 👷🏾‍♂️
 
 This school project was collaborated by the following KYH students:
 
-[Alexander Alazar](https://github.com/a-star128)👨🏿‍🚀, [Mamite Andersson](https://github.com/mamite100), [Joel Hjelmstedt](https://github.com/joelbeats), [Sandra Persson](https://github.com/sandrapersson149) ✨ , [Filipa Spajic](https://github.com/cr4y0n) 🥳
+[Alexander Alazar](https://github.com/a-star128)👨🏿‍🚀, [Mamite Andersson](https://github.com/mamite100)👩🏿‍💻, [Joel Hjelmstedt](https://github.com/joelbeats)🤯, [Sandra Persson](https://github.com/sandrapersson149) ✨, [Filipa Spajic](https://github.com/cr4y0n) 🥳
 
-## Table of contents
+## Table of contents 📋
 * [**General info**](#**Generalinfo**)  
 * [**Preview**](#Preview)
 *  [**Features**](#features)
@@ -18,17 +18,17 @@ This school project was collaborated by the following KYH students:
 *  [**Links**](#Links)
 
 
-## General info
+## General info 📢
 
 ****A functioning note taking app where you can create, edit, favorite, delete and save notes in local storage (up to 5MB). A separate landing page with information of the app and eventually a sign-up page as well as contacts and more.****
 
 
-## Preview
+## Preview 📸
 ![enter image description here](https://i.ibb.co/8X4XP9S/screen-quire.png)
 [Surge](http://quire-pergament.surge.sh/)
 
 
-## Features
+## Features 💡
 **List of features ready:**
 * Create notes
 * Edit notes
@@ -38,7 +38,7 @@ This school project was collaborated by the following KYH students:
 * Restore deleted notes
 * Search specific notes
 
-## To-do
+## To-do 🛠
 **List of features left to do:**
 -   Bugs: Fix icon colors when clicked in the navbar
 -   Make search enabled on titles
@@ -51,7 +51,7 @@ This school project was collaborated by the following KYH students:
 -   Add Contacts page
 
 
-## Technologies
+## Technologies 💻
 **Languages:**
   - HTML 5   
  - CSS 3   
@@ -63,7 +63,7 @@ This school project was collaborated by the following KYH students:
    **Prototype sites:**
 -   Figma
 
-## LINKS
+## LINKS 🔗
 
 [Surge](http://quire-pergament.surge.sh/)
 
