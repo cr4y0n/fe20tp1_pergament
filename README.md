@@ -54,10 +54,10 @@ Add here credits. Project inspired by..., based on...
 
 ## Contact
 Created by:
-[Filipa Spajic](https://github.com/cr4y0n)
-[Sandra Persson](https://github.com/sandrapersson149)
-[Joel Hjelmstedt](https://github.com/joelbeats)
-[Mamite Andersson](https://github.com/mamite100)
-[Alexander Alazar](https://github.com/a-star128)
+ - [Filipa Spajic](https://github.com/cr4y0n)
+ - [Sandra Persson](https://github.com/sandrapersson149)
+ - [Joel Hjelmstedt](https://github.com/joelbeats)
+ - [Mamite Andersson](https://github.com/mamite100)
+ - [Alexander Alazar](https://github.com/a-star128)
 
 
