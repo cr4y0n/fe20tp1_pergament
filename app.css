@@ -290,9 +290,11 @@
   .note-app {
     display: flex;
     flex-direction: column;
+    height: 100vh;
   }
+
   #navbar {
-    height: 100px;
+    height: 12vh;
     width: 100%;
   }
   #navbar-items li i{
@@ -303,6 +305,9 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
+  }
+  #notebar, #note-editor {
+    height: 45vh;
   }
   #notebar {
     box-shadow: inset 0px 2px 1px rgb(194, 194, 194);
@@ -318,6 +323,9 @@
     padding: 5px;
     border-bottom: none;
   }
+ #note-wrapper{
+   height: 30vh;
+ }
   #scroller {
     height: 30vh;
   }
@@ -325,8 +333,8 @@
     font-size: 15px;
   }
   #container-btn {
-    right: 20px;
-    bottom: 30px;
+    right: 25px;
+    bottom: 35px;
   }
   .fa-plus-square, .fa-floppy-o, .fa-print{
     font-size: 40px;
