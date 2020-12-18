@@ -24,8 +24,9 @@ This school project was collaborated by the following KYH students:
 
 
 ## Preview 📸
+[CLICK HERE FOR HOSTED DEMO VERSION](http://quire-pergament.surge.sh/)
 ![enter image description here](https://i.ibb.co/8X4XP9S/screen-quire.png)
-[Surge](http://quire-pergament.surge.sh/)
+
 
 
 ## Features 💡
