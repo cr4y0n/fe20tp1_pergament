@@ -11,11 +11,12 @@ This school project was collaborated by the following KYH students:
 
 ## Table of contents 📋
 * [**General info**](#**Generalinfo**)  
-* [**Preview**](#**Preview**)
-*  [**Features**](#**features**)
-*  [**To Do**](#**To-Do**)
-* [**Technologies**](#**technologies**)
+* [**Preview**](#Preview)
+*  [**Features**](#features)
+*  [**To Do**](#ToDo)
+* [**Technologies**](#technologies)
 *  [**Links**](#Links)
+
 
 
 ## General info 📢
