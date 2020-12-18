@@ -325,7 +325,10 @@
     font-size: 15px;
   }
   #container-btn {
-    right: 5px;
-    bottom: 5px;
+    right: 20px;
+    bottom: 30px;
+  }
+  .fa-plus-square, .fa-floppy-o, .fa-print{
+    font-size: 40px;
   }
 }
