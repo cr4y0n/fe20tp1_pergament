@@ -15,7 +15,7 @@ This school project was collaborated by the following KYH students:
 *  [**Features**](#features)
 *  [**To Do**](#ToDo)
 * [**Technologies**](#technologies)
-*  [**Links🔗**](#Links🔗)
+*  [**Links**](#Links)
 
 
 
