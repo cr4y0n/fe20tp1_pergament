@@ -10,12 +10,12 @@ This school project was collaborated by the following KYH students:
 [Alexander Alazar](https://github.com/a-star128) 👨🏿‍🚀, [Mamite Andersson](https://github.com/mamite100) 👩🏿‍💻, [Joel Hjelmstedt](https://github.com/joelbeats) 🤯, [Sandra Persson](https://github.com/sandrapersson149) ✨, [Filipa Spajic](https://github.com/cr4y0n) 🥳
 
 ## Table of contents 📋
-* [**General info 📢**](#**Generalinfo**)  
-* [**Preview 📸**](#Preview)
-*  [**Features 💡**](#features)
-*  [**To Do 🛠**](#ToDo)
-* [**Technologies 💻**](#Technologies)
-*  [**Links 🔗**](#Links)
+* [**General info**](#**Generalinfo**)  
+* [**Preview**](#Preview)
+*  [**Features**](#features)
+*  [**To Do**](#ToDo)
+* [**Technologies**](#Technologies)
+*  [**Links**](#Links)
 
 
 
